@@ -1,0 +1,28 @@
+.menu {
+    background-color: var(--aCeu);
+    padding: 10px 20px;
+}
+
+.menu ul {
+    background-color: var(--aCeu);
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li  {
+    background-color: var(--aCeu);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--aEscuro);
+    font-weight: bold;
+}
+
+.menu li :hover {
+    color: var(--amarelo);
+}
+
+
+
+

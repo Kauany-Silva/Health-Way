@@ -1,0 +1,45 @@
+    .hospitais {
+  padding: 40px;
+  background: var(--aEscuro);
+  color: white;
+  text-align: center;
+}
+
+.tituloHospital {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.subtituloHospital {
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+.containerHospitais {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mapa {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.listaHospitais {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cardHospital {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: left;
+}

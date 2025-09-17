@@ -1,0 +1,93 @@
+.sobre {
+  width: 100%;
+  min-height: 90vh; /* altura maior */
+  background: var(--aEscuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 40px;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  max-width: 1300px;
+  width: 100%;
+
+  /* >>> adicionado para não colar nas laterais <<< */
+  padding: 0 20px; 
+  box-sizing: border-box;
+}
+
+.texto {
+  flex: 1;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  color: var(--verde);
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.titulo {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.texto p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.botao {
+  background: var(--aCinza);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao:hover {
+  background: var(--amarelo);
+  color: var(--aEscuro);
+}
+
+/* Grid das fotos */
+.fotos {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center; /* centraliza imagens dentro das colunas */
+}
+
+.fotos img {
+  width: 100%;
+  max-width: 260px; /* >>> limite para não encostar nas bordas <<< */
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+}
+
+.fotos img:hover {
+  transform: scale(1.05);
+}
+
+span {
+  color: var(--amarelo);
+  font-family: "Allura", cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
