@@ -20,7 +20,8 @@ Nosso objetivo é ajudar pessoas a organizarem suas vacinas e exames de forma si
 Muitas pessoas têm dificuldade em acompanhar o histórico de vacinas, exames e cuidados de saúde, tanto próprios quanto de seus pets. Isso gera esquecimentos, atrasos em vacinação e dificuldade de acesso rápido a informações médicas.
 
 **Solução:**  
-O **HealthWay** é uma plataforma intuitiva que centraliza informações de saúde, permitindo armazenar vacinas, exames e dados de pets, além de calcular o tempo de espera em hospitais próximos. Com isso, os usuários têm tudo organizado, acessível e atualizado, prevenindo esquecimentos e facilitando decisões rápidas.
+O **HealthWay** é uma plataforma intuitiva que centraliza informações de saúde, permitindo armazenar vacinas, exames e dados de pets, além de calcular o tempo de espera em hospitais próximos. Com isso, os usuários têm tudo organizado, acessíve
+l e atualizado, prevenindo esquecimentos e facilitando decisões rápidas.
 
 **Funcionalidades:**
 Com o site, o usuário pode:
@@ -31,7 +32,6 @@ Com o site, o usuário pode:
 - Acessar histórico de consultas.
 - Verificar consultas e medicamentos de seus animais de estimação.
 - Consultar hospitais próximos e tempo médio de espera.
-
 
 
 ## 🖥️ Tecnologias Utilizadas
