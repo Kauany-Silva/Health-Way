@@ -1,0 +1,63 @@
+@import './styles/variables.css';
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background-color: var(--offwhite);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* impede scroll horizontal */
+  max-width: 100vw;   /* limita a largura ao tamanho da tela */
+}
+/* === ALTO CONTRASTE (mantendo os fundos originais) === */
+body.alto-contraste {
+  color: #fff !important;
+  background-color: #000 !important; /* só o fundo principal */
+}
+
+/* Textos */
+body.alto-contraste p,
+body.alto-contraste span,
+body.alto-contraste li {
+  color: #fff !important;
+}
+
+/* Cabeçalhos */
+body.alto-contraste h1,
+body.alto-contraste h2,
+body.alto-contraste h3,
+body.alto-contraste h4,
+body.alto-contraste h5,
+body.alto-contraste h6 {
+  color: #fff !important;
+}
+
+/* Links */
+body.alto-contraste a {
+  color: red !important;
+  text-decoration: underline !important;
+}
+
+/* Botões */
+body.alto-contraste button {
+  color: red !important;
+  background-color: #000 !important;
+  border: 2px solid red !important;
+}
+
+/* Formulários */
+body.alto-contraste input,
+body.alto-contraste select,
+body.alto-contraste textarea {
+  background-color: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}

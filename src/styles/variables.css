@@ -1,0 +1,16 @@
+:root {
+    --aClaro: #add8ec;
+    --aPastel: #89CFF0;
+    --aCeu: #7BBDE8;
+    --aCinza: #49769F;
+    --aEscuro: #001D39;
+    --amarelo: #FFDA9E;
+    --offwhite: #f5f5f5;
+
+}
+
+body {
+    background: var(--aEscuro)
+}
+
+

@@ -1,0 +1,63 @@
+.cardsSection {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  padding: 80px 100px;
+  background: var(--aEscuro);
+  color: var(--offwhite);
+  font-weight: 700;
+  align-items: start;
+}
+
+.textContent {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.nomeRecursos {
+  color: var(--amarelo);
+  font-size: 2.5rem;
+  font-family: "Allura";
+}
+
+.textContent p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.cardLand {
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  text-align: left;
+  background: rgba(137, 207, 240, 0.15);
+  backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cardLand:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  background-color: var(--aCinza);
+  color: var(--aEscuro);
+}
+
+.cardLand h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.cardLand p {
+  font-size: 1rem;
+  color: var(--offwhite);
+  opacity: 0.9;
+}

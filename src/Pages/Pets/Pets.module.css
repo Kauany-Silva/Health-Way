@@ -1,0 +1,65 @@
+.petsPage {
+  padding: 30px;
+  background: #f5f5f5;
+  min-height: 100%;
+  border-radius: 12px;
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.subtitulo {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.listaPets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cardPet {
+  background: rgba(0,0,0,0.05);
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  border-radius: 12px;
+  flex: 1 1 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  color: #333;
+}
+
+.cardPet h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.cardPet p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.cardPet:hover {
+     transform: translateY(-5px) scale(1.05);
+    background: var(--aCeu);
+}
+
+.CadastrarPet { 
+
+  background: var(--aCeu);
+  margin-top: 100px;
+  margin-left:380px;
+  border-radius: 12px;
+  border: var(--aCeu);
+  height: 25px;
+  color: var(--aEscuro);
+  background: var(--amarelo);
+}
+.CadastrarPet:hover{
+   transform: translateY(-5px) scale(1.05);
+   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
