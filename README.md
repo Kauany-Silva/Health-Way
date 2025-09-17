@@ -126,4 +126,4 @@ npm run dev  # ou yarn dev
 ## 🌐 Acessar o Health Way
 
 Você pode acessar o site da HealthWay neste link:  
-[https://healthway.vercel.app](https://healthway.vercel.app)
+([https://healthway.vercel.app](https://health-way-gray.vercel.app/))
