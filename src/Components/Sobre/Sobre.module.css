@@ -97,6 +97,7 @@ span {
     align-items: center;
     gap: 40px;
     text-align: center;
+    padding: 0 120px;
   }
 
   .titulo {
@@ -133,6 +134,8 @@ span {
     text-align: center;
     gap: 30px;
     align-items: center;
+    padding: 0 100px;
+    
   }
 
   .texto {
