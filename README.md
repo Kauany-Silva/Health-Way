@@ -5,6 +5,10 @@ Nosso objetivo é ajudar pessoas a organizarem suas vacinas e exames de forma si
 
 ---
 
+**ETEC Dr. Geraldo José Rodrigues Alckmin**
+
+---
+
 ## 👨‍👩‍👧‍👦 Equipe
 
 - **Kauany Cristine da Silva Moraes** – Líder do Projeto/ Desenvolvedora do Código Principal
