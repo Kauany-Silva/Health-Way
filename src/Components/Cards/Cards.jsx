@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Cards.module.css";
 
 const cardsData = [
@@ -8,9 +7,10 @@ const cardsData = [
   { cardTitulo: "Cuidado com Seu Pet", descricao: "Organize vacinas e medicamentos do seu animal de estimação em um só lugar, garantindo saúde e bem-estar também para ele."}
 ];
 
-const Cards = () => {
+const Cards = ({id}) => {
   return (
-    <section className={styles.cardsSection}>
+    <section id={id}>
+      <section className={styles.cardsSection}>
       <div className={styles.textContent}>
         <h2>Recursos do </h2>
         <h2 className={styles.nomeRecursos}>Health Way</h2>
@@ -18,7 +18,6 @@ const Cards = () => {
           Conheça as funcionalidades que oferecemos para melhorar sua saúde e bem-estar.  
           Tudo em um só lugar, prático e seguro.
         </p>
-       
       </div>
 
       <div className={styles.cardsGrid}>
@@ -26,11 +25,13 @@ const Cards = () => {
           <div key={i} className={styles.cardLand}>
             <h3>{card.cardTitulo}</h3>
             <p>{card.descricao}</p>
+            
           </div>
         ))}
       </div>
     </section>
+    </section>
   );
 };
 
-export {Cards};
+export { Cards };
