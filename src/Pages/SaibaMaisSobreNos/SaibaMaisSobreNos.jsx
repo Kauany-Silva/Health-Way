@@ -7,7 +7,7 @@ import Livia from "../../Assets/Imagens/Livia.jpg";
 import Maria from "../../Assets/Imagens/Maria.jpg";
 import Yasmin from "../../Assets/Imagens/Yasmin.jpg";
 
-const SaibaMaisSobreNos = () => {
+const SaibaMaisSobreNos = ({fontSize}) => {
 
 
   // Atualiza fonte global
