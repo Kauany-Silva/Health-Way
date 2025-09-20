@@ -16,7 +16,7 @@ const PainelAcessibilidade = () => {
   // Alterna alto contraste
   useEffect(() => {
     if (contrasteAtivo) {
-      document.documentElement.style.setProperty("--bg-color", "#121212"); // fundo escuro
+      document.documentElement.style.setProperty("--bg-color", "var(--aEscuro)"); // fundo escuro
       document.documentElement.style.setProperty("--text-color", "#ffffff"); // texto branco
       document.documentElement.style.setProperty("--aMedio", "#1e88e5"); // azul contraste
     } else {
