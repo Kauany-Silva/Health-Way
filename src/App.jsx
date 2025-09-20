@@ -1,5 +1,5 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { BotaoAcessibilidade, ScrollToTop} from './Components';
+import { PainelAcessibilidade, ScrollToTop} from './Components';
 
 // Páginas públicas
 import { Landing } from './Pages/Landing';
@@ -21,9 +21,7 @@ function App() {
     <BrowserRouter>
     
       <ScrollToTop />
-      
-     
-      <BotaoAcessibilidade />
+      <PainelAcessibilidade/>
 
       <Routes>
         {/* Rotas públicas */}
