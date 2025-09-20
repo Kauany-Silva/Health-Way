@@ -1,6 +1,6 @@
 export * from './Cabecalho';
 export * from './Rodape';
-export * from './BotaoAcessibilidade';
+export * from './PainelAcessibilidade';
 export * from './Cards';
 export * from './Contato';
 export * from './Hero';

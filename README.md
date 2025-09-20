@@ -33,6 +33,7 @@ Com o site, o usuário pode:
 - Consultar hospitais próximos e tempo médio de espera.
 
 
+
 ## 🖥️ Tecnologias Utilizadas
 
 - React
