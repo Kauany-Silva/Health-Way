@@ -20,12 +20,7 @@ Nosso objetivo é ajudar pessoas a organizarem suas vacinas e exames de forma si
 Muitas pessoas têm dificuldade em acompanhar o histórico de vacinas, exames e cuidados de saúde, tanto próprios quanto de seus pets. Isso gera esquecimentos, atrasos em vacinação e dificuldade de acesso rápido a informações médicas.
 
 **Solução:**  
-<<<<<<< HEAD
-O **HealthWay** é uma plataforma intuitiva que centraliza informações de saúde, permitindo armazenar vacinas, exames e dados de pets, além de calcular o tempo de espera em hospitais próximos. Com isso, os usuários têm tudo organizado, acessíve
-l e atualizado, prevenindo esquecimentos e facilitando decisões rápidas.
-=======
 O **HealthWay** é uma plataforma intuitiva que centraliza informações de saúde, permitindo armazenar vacinas, exames e dados de pets, além de calcular o tempo de espera em hospitais próximos. Com isso, os usuários têm tudo organizado, acessível e atualizado, prevenindo esquecimentos e facilitando decisões rápidas.
->>>>>>> 1705941218d44b6f52800dcb9367de0ac466375b
 
 **Funcionalidades:**
 Com o site, o usuário pode:
@@ -38,10 +33,6 @@ Com o site, o usuário pode:
 - Consultar hospitais próximos e tempo médio de espera.
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1705941218d44b6f52800dcb9367de0ac466375b
 ## 🖥️ Tecnologias Utilizadas
 
 - React
@@ -134,8 +125,4 @@ npm run dev  # ou yarn dev
 ## 🌐 Acessar o Health Way
 
 Você pode acessar o site da HealthWay neste link:  
-<<<<<<< HEAD
 [https://health-way-gray.vercel.app/](https://health-way-gray.vercel.app/)
-=======
-([https://healthway.vercel.app](https://health-way-gray.vercel.app/))
->>>>>>> 1705941218d44b6f52800dcb9367de0ac466375b
