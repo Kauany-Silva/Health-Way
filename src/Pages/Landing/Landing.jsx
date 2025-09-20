@@ -6,10 +6,11 @@ const Landing = () => {
     <div className={styles.landing}>
       <Cabecalho titulo="Health Way" />
       <Menu />      
-      <Hero id="inicio"/>
-      <Sobre />
-      <Cards/>
-      <Contato/>
+      <Hero id="inicio" />
+      <Sobre id="sobre" />
+      <Cards id="recursos" />
+      <Contato id="contato" />
+
       <Rodape />
     </div>
   );
