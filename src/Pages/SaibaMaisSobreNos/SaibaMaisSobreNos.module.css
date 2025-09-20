@@ -9,7 +9,6 @@
   margin: 0 auto;
 }
 
-
 .subtitulo {
   color: var(--aEscuro);
   font-size: 1.2rem;
@@ -25,6 +24,7 @@
   font-size: 1.5rem;
   color: var(--aEscuro);
   margin-bottom: 3rem;
+  text-align: justify;
 }
 
 .descricao span {
@@ -51,10 +51,11 @@
   border-radius: 50%;
   margin-bottom: 1rem;
   box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
 }
 
 .pessoa img:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .pessoa h4 {
@@ -75,8 +76,4 @@
 .botao:hover {
   background-color: var(--amarelo);
   color: var(--aEscuro);
-}
-
-p {
-    text-align: justify;
 }
