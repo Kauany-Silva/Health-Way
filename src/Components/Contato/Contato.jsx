@@ -1,13 +1,13 @@
-import React from "react";
 import styles from "./Contato.module.css";
 
-const Contato = () => {
+const Contato = ({id}) => {
   return (
-    <section className={styles.contato}>
+   <section id={id}>
+     <section className={styles.contato}>
       <div className={styles.containerContato}>
        
         <div className={styles.infoContato}>
-          <h2>Contato</h2>
+          <h1>Contato</h1>
           <p>
             Quer saber mais ou tem alguma dúvida?  
             Preencha o formulário ao lado e responderemos o quanto antes.
@@ -44,6 +44,7 @@ const Contato = () => {
         </form>
       </div>
     </section>
+   </section>
   );
 };
 
