@@ -7,10 +7,16 @@
     --amarelo: #FFDA9E;
     --offwhite: #f5f5f5;
 
+    --bg-color: var(--aClaro);    /* fundo padrão */
+    --text-color: var(--aEscuro); /* texto padrão */
+    --aMedio: #0077ff;      
+    --font-base: 16px;
 }
 
 body {
-    background: var(--aEscuro)
+  font-size: var(--font-base);
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
 }
-
 
