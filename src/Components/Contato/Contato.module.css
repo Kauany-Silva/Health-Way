@@ -1,9 +1,12 @@
 .contato {
   width: 100%;
   padding: 80px 40px;
-  background: var(--aEscuro);
+  background: var(--bg-color, var(--aEscuro));
   display: flex;
   justify-content: center;
+  color: var(--text-color, white);
+  font-size: var(--font-base, 16px);
+  transition: all 0.3s ease;
 }
 
 .containerContato {
@@ -15,16 +18,16 @@
   align-items: center;
 }
 
-.infoContato h2 {
-  font-size: 2.5rem;
+.infoContato h1 {
+  font-size: calc(2.5rem * (var(--font-base,16px)/16));
   font-weight: bold;
-  color: var(--aClaro);
+  color: var(--aMedio, var(--aClaro));
   margin-bottom: 20px;
 }
 
 .infoContato p {
-  font-size: 1.1rem;
-  color: var(--aCeu);
+  font-size: calc(1.1rem * (var(--font-base,16px)/16));
+  color: var(--text-color, var(--aCeu));
   line-height: 1.6;
 }
 
@@ -47,33 +50,71 @@
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.15);
-  color: white;
-  font-size: 1rem;
+  color: var(--text-color, white);
+  font-size: calc(1rem * (var(--font-base,16px)/16));
 }
 
 .inputContato::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--aEscuro);
 }
 
 .botaoContato {
   padding: 14px;
   border: none;
   border-radius: 10px;
-  background: var(--aClaro);
-  color: var(--aEscuro);
-  font-size: 1.1rem;
+  background: var(--aMedio, var(--aClaro));
+  color: var(--bg-color, var(--aEscuro));
+  font-size: calc(1.1rem * (var(--font-base,16px)/16));
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .botaoContato:hover {
-  background: var(--amarelo);
+  background: var(--aMedio);
   transform: translateY(-2px);
 }
 
 .instagram {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(1rem * (var(--font-base,16px)/16));
+}
 
+/* Responsividade */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .containerContato {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .formContato {
+    padding: 30px;
+  }
+}
+
+/* Celular médio (481px a 768px) */
+@media (max-width: 768px) {
+  .containerContato {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .formContato {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Celular pequeno (480px) */
+@media (max-width: 480px) {
+  .containerContato {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .inputContato {
+    font-size: calc(0.9rem * (var(--font-base,16px)/16));
+  }
+  .botaoContato {
+    font-size: calc(1rem * (var(--font-base,16px)/16));
+  }
 }
