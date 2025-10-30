@@ -1,5 +1,5 @@
 .menu {
-    background-color: var(--bg-color, #f0f0f0);
+    background-color: var(--bg-color);
     padding: 10px 20px;
     transition: all 0.3s ease;
 }
@@ -18,13 +18,9 @@
     font-weight: bold;
     cursor: pointer;
     padding: 6px 10px;
-    color: var(--text-color, #000);
     transition: all 0.25s ease;
 }
 
-.menu li:hover {
-    color: var(--aMedio, #ffd700);
-}
 
 /* RESPONSIVO */
 @media (max-width: 768px) {

@@ -37,12 +37,12 @@
 /* Texto dentro do painel */
 .painel span {
   font-size: 0.9rem;
-  color: var(--text-color, #000);
+  color: var(--text-color);
   padding: 0 6px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* Classes para exibição em desktop e mobile */
+/* desktop e mobile */
 .desktop {
   display: inline;
 }
