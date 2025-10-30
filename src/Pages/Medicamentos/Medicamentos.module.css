@@ -8,12 +8,12 @@
 .titulo {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: var(--aCinza);
+  color: #333;
 }
 
 .subtitulo {
   margin-bottom: 30px;
-  color: var(--cinza);
+  color: #555;
 }
 
 .tabela {
@@ -31,7 +31,7 @@
 
 .tabela th {
   background: var(--aCeu);
-  color: var(--cinza);
+  color: #333;
 }
 
 .tabela tr:nth-child(even) {

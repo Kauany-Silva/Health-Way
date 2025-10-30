@@ -1,0 +1,58 @@
+.medicamentosPage {
+  padding: 30px;
+  background: var(--offwhite);
+  min-height: 100%;
+  border-radius: 12px;
+}
+
+.titulo {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: var(--aCinza);
+}
+
+.subtitulo {
+  margin-bottom: 30px;
+  color: var(--cinza);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--aClaro);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tabela th, .tabela td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.tabela th {
+  background: var(--aCeu);
+  color: var(--cinza);
+}
+
+.tabela tr:nth-child(even) {
+  background: rgba(0,0,0,0.03);
+}
+
+.tabela tr:hover {
+  background: rgba(0,0,0,0.08);
+}
+
+.botaoEditar {
+  padding: 6px 12px;
+  border: none;
+  background-color: var(--aCinza);
+  color: var(--offwhite);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.botaoEditar:hover {
+  background-color: var(--aCinza);
+  transform: scale(1.05);
+}

@@ -1,0 +1,46 @@
+.menu {
+    background-color: var(--bg-color);
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 6px 10px;
+    transition: all 0.25s ease;
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu li {
+        padding: 8px 12px;
+        font-size: 1rem;
+    }
+}
+
+/* alto contraste */
+.menu li {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.menu li:hover {
+    color: var(--aMedio);
+}

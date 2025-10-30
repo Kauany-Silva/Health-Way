@@ -1,12 +1,12 @@
 .sobre {
   width: 100%;
   min-height: 90vh;
-  background: var(--bg-color);
+  background: var(--bg-color, var(--aEscuro));
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 60px 40px;
-  color: var(--text-color);
+  color: var(--text-color, white);
   transition: all 0.3s ease;
   font-size: var(--font-base, 16px); /* usa a fonte global */
 }
@@ -28,7 +28,7 @@
 
 .subtitulo {
   font-size: calc(1.2rem * (var(--font-base, 16px)/16));
-  color: var(--aMedio);
+  color: var(--aMedio, var(--verde));
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -46,13 +46,13 @@
 }
 
 .botao {
-  background: var(--aMedio);
+  background: var(--aMedio, var(--aCinza));
   border: none;
   padding: 12px 28px;
   border-radius: 30px;
   font-size: calc(1rem * (var(--font-base, 16px)/16));
   font-weight: bold;
-  color: var(--text-color);
+  color: var(--text-color, white);
   cursor: pointer;
   transition: 0.3s;
 }
@@ -86,7 +86,7 @@
 }
 
 span {
-  color: var(--aMedio);
+  color: var(--aMedio, var(--amarelo));
   font-family: "Allura", cursive;
   font-size: calc(1.5rem * (var(--font-base, 16px)/16));
   font-weight: bold;

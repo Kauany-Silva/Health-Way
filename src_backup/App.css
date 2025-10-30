@@ -1,0 +1,19 @@
+@import './styles/variables.css';
+
+body, header {
+    margin: 0;
+    font-family: var(--font-family);
+   
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* impede scroll horizontal */
+  max-width: 100vw;   /* limita a largura ao tamanho da tela */
+}

@@ -1,6 +1,6 @@
 .rodape {
   color: var(--offwhite);
-  background: var(--cinza);
+  background: #161616;
   align-self: center;
   padding: 20px 0;
   font-size: 1rem;
@@ -11,6 +11,6 @@
 
 .rodape .textoRodape {
   margin: 0;
-  background-color: var(--cinza);
+  background-color: #161616;
 }
 
