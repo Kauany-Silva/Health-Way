@@ -1,6 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import { ScrollToTop, PainelAcessibilidade } from './Components';
-import { Rotas } from './Rotas';
+import { ScrollToTop, PainelAcessibilidade, Rotas } from './Components';
 
 function App() {
   return (
