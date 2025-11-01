@@ -15,10 +15,10 @@ import { LocalHospital } from './Pages/LocalHospital';
 import { Consultas } from './Pages/Consultas';
 import { Medicamentos } from './Pages/Medicamentos';
 
-function Rotas() {
+const Rotas = () => {
   return (
     
-    <BrowserRouter>
+    <>
     
       <ScrollToTop />
       <PainelAcessibilidade/>
@@ -39,8 +39,8 @@ function Rotas() {
           <Route path="pets" element={<Pets />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
-export default Rotas;
+export {Rotas};
