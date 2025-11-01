@@ -4,18 +4,18 @@ import { PainelAcessibilidade, ScrollToTop } from '../';
 
 
 // Páginas públicas
-import { Landing } from './Pages/Landing';
-import { Login } from './Pages/Login';
-import { Cadastro } from './Pages/Cadastro';
-import { SaibaMaisSobreNos } from './Pages/SaibaMaisSobreNos';
+import { Landing } from '../../Pages/Landing';
+import { Login } from '../../Pages/Login';
+import { Cadastro } from '../../Pages/Cadastro';
+import { SaibaMaisSobreNos } from '../../Pages/SaibaMaisSobreNos';
 
 // Dashboard e rotas filhas
-import { Dashboard } from './Pages/Dashboard';
-import { CarteiraVacinacao} from './Pages/CarteiraVacinacao';
-import { Pets } from './Pages/Pets';
-import { LocalHospital } from './Pages/LocalHospital';
-import { Consultas } from './Pages/Consultas';
-import { Medicamentos } from './Pages/Medicamentos';
+import { Dashboard } from '../../Pages/Dashboard';
+import { CarteiraVacinacao } from '../../Pages/CarteiraVacinacao';
+import { Pets } from '../../Pages/Pets';
+import { LocalHospital } from '../../Pages/LocalHospital';
+import { Consultas } from '../../Pages/Consultas';
+import { Medicamentos } from '../../Pages/Medicamentos';
 
 const Rotas = () => {
   return (
