@@ -1,0 +1,6 @@
+{
+  "vacinas": [
+    { "id": 1, "nome": "COVID-19", "data": "2023-05-10", "dose": "2ª dose" },
+    { "id": 2, "nome": "Gripe", "data": "2023-03-15", "dose": "Única" }
+  ]
+}

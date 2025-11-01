@@ -1,20 +1,43 @@
 import { createContext, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
-// criação o contexto
 const AuthContext = createContext();
 
-// provedor -> fornecedor do contexto
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+  const [user, setUser] = useState(() => {
+    // tenta recuperar do localStorage
+    const storedUser = localStorage.getItem("user");
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
+
+  // função de login simulada
+  const login = (email, senha) => {
+    // Exemplo: autenticação fake
+    if (email === "teste@teste.com" && senha === "1234") {
+      const userData = { nome: "Usuário Teste", email };
+      setUser(userData);
+      localStorage.setItem("user", JSON.stringify(userData));
+      navigate("/dashboard"); // redireciona para a área privada
+    } else {
+      alert("E-mail ou senha inválidos");
+    }
+  };
+
+  // logout
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-// hook para acessar o contexto mais fácil
 const useAuth = () => useContext(AuthContext);
 
-export {AuthProvider, useAuth, AuthContext}
+export { AuthProvider, useAuth, AuthContext };

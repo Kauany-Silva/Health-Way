@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './CarteiraVacinacao.module.css';
-import {VacinaCard} from '../../Components';
+import { VacinaCard } from '../../Components';
+import { getVacinas, addVacina, updateVacina, deleteVacina } from '../../API/vacinas'; // importando funções da API
 
-const CarteiraVacinacao=()=> {
-  const [vacinas, setVacinas] = useState([
-    { id: 1, nome: 'COVID-19', data: '2023-05-10', dose: '2ª dose' },
-    { id: 2, nome: 'Gripe', data: '2023-03-15', dose: 'Única' },
-  ]);
-
+const CarteiraVacinacao = () => {
+  const [vacinas, setVacinas] = useState([]);
   const [form, setForm] = useState({ nome: '', data: '', dose: '' });
+
+  // Pegar vacinas ao carregar
+  useEffect(() => {
+    fetchVacinas();
+  }, []);
+
+  const fetchVacinas = async () => {
+    const data = await getVacinas();
+    setVacinas(data);
+  };
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleAddVacina(e) {
+  const handleAddVacina = async (e) => {
     e.preventDefault();
     if (!form.nome || !form.data || !form.dose) return alert('Preencha todos os campos');
-    setVacinas([...vacinas, { id: Date.now(), ...form }]);
+
+    const novaVacina = { ...form };
+    await addVacina(novaVacina); // adiciona na API
     setForm({ nome: '', data: '', dose: '' });
-  }
+    fetchVacinas(); // atualiza lista
+  };
+
+  const handleDeleteVacina = async (id) => {
+    await deleteVacina(id);
+    fetchVacinas();
+  };
 
   return (
     <div className={styles.dashboard}>
@@ -56,11 +71,15 @@ const CarteiraVacinacao=()=> {
       <div className={styles.vacinasList}>
         {vacinas.length === 0 && <p>Nenhuma vacina cadastrada.</p>}
         {vacinas.map(vacina => (
-          <VacinaCard key={vacina.id} vacina={vacina} />
+          <VacinaCard
+            key={vacina.id}
+            vacina={vacina}
+            onDelete={() => handleDeleteVacina(vacina.id)} // se VacinaCard tiver botão de excluir
+          />
         ))}
       </div>
     </div>
   );
-}
+};
 
-export {CarteiraVacinacao};
+export { CarteiraVacinacao };

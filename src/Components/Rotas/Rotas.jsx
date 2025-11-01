@@ -1,7 +1,6 @@
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { PainelAcessibilidade, ScrollToTop } from '../';
-
-
+import { RotasPrivadas } from './RotasPrivadas';
 
 // Páginas públicas
 import { Landing } from '../../Pages/Landing';
@@ -19,11 +18,9 @@ import { Medicamentos } from '../../Pages/Medicamentos';
 
 const Rotas = () => {
   return (
-    
     <>
-    
       <ScrollToTop />
-      <PainelAcessibilidade/>
+      <PainelAcessibilidade />
 
       <Routes>
         {/* Rotas públicas */}
@@ -32,17 +29,19 @@ const Rotas = () => {
         <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/saibamaissobrenos" element={<SaibaMaisSobreNos />} />
 
-        {/* Dashboard com rotas filhas */}
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="vacinacao" element={<CarteiraVacinacao />} />
-          <Route path="hospitais" element={<LocalHospital />} />
-          <Route path="consultas" element={<Consultas />} />
-          <Route path="medicamentos" element={<Medicamentos />} />
-          <Route path="pets" element={<Pets />} />
+        {/* Rotas privadas protegidas */}
+        <Route element={<RotasPrivadas />}>
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="vacinacao" element={<CarteiraVacinacao />} />
+            <Route path="hospitais" element={<LocalHospital />} />
+            <Route path="consultas" element={<Consultas />} />
+            <Route path="medicamentos" element={<Medicamentos />} />
+            <Route path="pets" element={<Pets />} />
+          </Route>
         </Route>
       </Routes>
     </>
   );
-}
+};
 
-export {Rotas};
+export { Rotas };

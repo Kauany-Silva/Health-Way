@@ -9,3 +9,4 @@ export * from './Sobre';
 export * from './VacinaCard';
 export * from './ScrollToTop';
 export * from './Rotas';
+
