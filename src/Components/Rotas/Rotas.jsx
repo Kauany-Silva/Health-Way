@@ -1,5 +1,7 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { PainelAcessibilidade, ScrollToTop} from './Components';
+import { Routes, Route} from 'react-router-dom';
+import { PainelAcessibilidade, ScrollToTop } from '../';
+
+
 
 // Páginas públicas
 import { Landing } from './Pages/Landing';
