@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import style from "../Cadastro/Cadastro.module.css";
+import { useAuth } from "../../Context";
 
 const Login = () => {
-  const [name, setName] = useState(""); // estado para armazenar o nome do usuario 
+  const [name, setName] = useState("");
   const navigate = useNavigate();
+  const { setUser } = useAuth(); // pega a função para atualizar o user
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // salva o nome no localStorage
     localStorage.setItem("usuario", name);
-
-    // futura validação poderia entrar aqui (ex: checar email/senha)
+    setUser(name); // atualiza o contexto, agora RotasPrivadas vai liberar
     navigate("/dashboard");
   };
 
@@ -52,6 +52,6 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
 export {Login};

@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from "react";
 
-// criação o contexto
+// criação do contexto
 const AuthContext = createContext();
 
 // provedor -> fornecedor do contexto
@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-// hook para acessar o contexto mais fácil
+// hook para acessar o contexto mais facilmente
 const useAuth = () => useContext(AuthContext);
 
-export {AuthProvider, useAuth, AuthContext}
+export { AuthProvider, useAuth, AuthContext };

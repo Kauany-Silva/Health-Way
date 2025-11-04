@@ -8,3 +8,4 @@ export * from './Menu';
 export * from './Sobre';
 export * from './VacinaCard';
 export * from './ScrollToTop';
+export * from './Skeleton_Loader';

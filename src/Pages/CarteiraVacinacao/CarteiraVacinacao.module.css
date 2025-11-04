@@ -67,3 +67,8 @@
   flex-direction: column;
   gap: 1rem;
 }
+
+.erroInput {
+  border-color: var(--vermelho);
+  border-width: ;
+}

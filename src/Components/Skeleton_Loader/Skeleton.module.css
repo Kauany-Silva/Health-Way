@@ -1,0 +1,14 @@
+.skeleton {
+  background-color: var(--offwhite);
+  height: 60px;
+  border-radius: 8px;
+  margin: 8px 0;
+  width: 100%;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}

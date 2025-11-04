@@ -11,6 +11,8 @@
     --text-color: var(--aEscuro); /* texto padrão */
     --aMedio: #0077ff;      
     --font-base: 16px;
+
+    --vermelho: #ff3d41;
 }
 
 body {

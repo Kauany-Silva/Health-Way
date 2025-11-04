@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { FaSyringe, FaHome, FaHospital, FaCalendarCheck, FaPills, FaPaw } from "react-icons/fa";
 import styles from "./Dashboard.module.css";
