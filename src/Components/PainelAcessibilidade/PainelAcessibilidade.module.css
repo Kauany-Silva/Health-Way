@@ -37,7 +37,7 @@
 /* Texto dentro do painel */
 .painel span {
   font-size: 0.9rem;
-  color: var(--text-color, #000);
+  color: var(--text-color, --preto);
   padding: 0 6px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }

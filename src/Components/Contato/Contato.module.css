@@ -4,7 +4,7 @@
   background: var(--bg-color, var(--aEscuro));
   display: flex;
   justify-content: center;
-  color: var(--text-color, white);
+  color: var(--text-color, --offwhite);
   font-size: var(--font-base, 16px);
   transition: all 0.3s ease;
 }
@@ -50,7 +50,7 @@
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.15);
-  color: var(--text-color, white);
+  color: var(--text-color, --offwhite);
   font-size: calc(1rem * (var(--font-base,16px)/16));
 }
 

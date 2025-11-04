@@ -36,7 +36,7 @@
 .tituloLoginCadastro {
   margin-top: 2rem;
   margin-bottom: 1rem;
-  color: white;
+  color: var(--offwhite);
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;

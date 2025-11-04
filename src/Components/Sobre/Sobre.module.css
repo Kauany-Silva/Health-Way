@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   padding: 60px 40px;
-  color: var(--text-color, white);
+  color: var(--text-color, --offwhite);
   transition: all 0.3s ease;
   font-size: var(--font-base, 16px); /* usa a fonte global */
 }

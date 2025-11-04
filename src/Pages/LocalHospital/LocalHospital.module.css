@@ -1,7 +1,7 @@
     .hospitais {
   padding: 40px;
   background: var(--aEscuro);
-  color: white;
+  color: var(--offwhite);
   text-align: center;
 }
 
