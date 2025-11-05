@@ -15,17 +15,17 @@ const PainelAcessibilidade = () => {
 
   // Alterna alto contraste
   useEffect(() => {
-    if (contrasteAtivo) {
-      document.documentElement.style.setProperty("--bg-color", "var(--aEscuro)"); // fundo escuro
-      document.documentElement.style.setProperty("--text-color", "#ffffff"); // texto branco
-      document.documentElement.style.setProperty("--aMedio", "#1e88e5"); // azul contraste
-    } else {
-      // Valores padrão
-      document.documentElement.style.setProperty("--bg-color", "var(--aClaro)");
-      document.documentElement.style.setProperty("--text-color", "var(--aEscuro)");
-      document.documentElement.style.setProperty("--aMedio", "#0077ff");
-    }
-  }, [contrasteAtivo]);
+  if (contrasteAtivo) {
+    document.documentElement.style.setProperty("--bg-color", "var(--aEscuro)"); 
+    document.documentElement.style.setProperty("--text-color", "var(--offwhite)");
+    document.documentElement.style.setProperty("--aMedio", "#1e88e5");
+  } else {
+    document.documentElement.style.setProperty("--bg-color", "var(--aClaro)");
+    document.documentElement.style.setProperty("--text-color", "var(--aEscuro)");
+    document.documentElement.style.setProperty("--aMedio", "#0077ff");
+  }
+}, [contrasteAtivo]);
+
 
   // Modo leitura (mouseover desktop e toque mobile)
   useEffect(() => {

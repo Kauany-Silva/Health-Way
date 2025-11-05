@@ -1,5 +1,3 @@
-
-
 .dashboard {
   max-width: 600px;
   margin: 2rem auto;
@@ -70,4 +68,15 @@
 
 .erroInput {
   border-color: var(--vermelho);
+}
+
+.mensagemErro {
+  color: var(--vermelho);
+  font-size: medium;
+  font-weight: bold;
+  background-color: var(--aClaro);
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  
 }
