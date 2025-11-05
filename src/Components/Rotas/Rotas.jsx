@@ -15,10 +15,12 @@ import { LocalHospital } from '../../Pages/LocalHospital';
 import { Consultas } from '../../Pages/Consultas';
 import { Medicamentos } from '../../Pages/Medicamentos';
 
+import { NotFound } from '../../Pages/NotFound/NotFound';
+
 const Rotas = () => {
   return (
 
-      <Routes>  
+    <Routes>  
         {/* Rotas públicas */}  
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
@@ -26,17 +28,19 @@ const Rotas = () => {
         <Route path="/saibamaissobrenos" element={<SaibaMaisSobreNos />} />
 
         {/* Rotas privadas protegidas */}
-
-        <Route element={<RotasPrivadas />}>
-        <Route path="/dashboard" element={<Dashboard />}>
+    <Route element={<RotasPrivadas />}>
+      <Route path="/dashboard" element={<Dashboard />}>
         <Route path="vacinacao" element={<CarteiraVacinacao />} />
         <Route path="hospitais" element={<LocalHospital />} />
         <Route path="consultas" element={<Consultas />} />
         <Route path="medicamentos" element={<Medicamentos />} />
         <Route path="pets" element={<Pets />} />
-        </Route>
-        </Route>
-      </Routes>
+       </Route>
+      </Route>
+
+       <Route path="*" element={<NotFound />} />
+
+    </Routes>
     
   );
 };

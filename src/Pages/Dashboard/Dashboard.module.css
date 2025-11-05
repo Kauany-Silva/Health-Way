@@ -62,9 +62,9 @@
   color: var(--aEscuro);
 }
 
-.LogoSlogan img{
+.LogoSlogan img {
   height: 400px;
-  size: 400px auto ;
+  width: auto;
 }
 
 .LogoSlogan {

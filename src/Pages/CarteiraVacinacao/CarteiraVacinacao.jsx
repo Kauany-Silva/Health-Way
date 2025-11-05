@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import styles from './CarteiraVacinacao.module.css';
 import { VacinaCard, Skeleton } from '../../Components';
 
-
 const CarteiraVacinacao = () => {
   const [vacinas, setVacinas] = useState([
     { id: 1, nome: 'COVID-19', data: '2023-05-10', dose: '2ª dose' },
@@ -56,6 +55,7 @@ const CarteiraVacinacao = () => {
           onChange={handleChange}
           className={`${styles.inputVacina} ${errors.nome ? styles.erroInput : ''}`}
         />
+
         <input
           type="date"
           name="data"
@@ -72,6 +72,7 @@ const CarteiraVacinacao = () => {
           className={`${styles.inputVacina} ${errors.dose ? styles.erroInput : ''}`}
         />
         <button type="submit" className={styles.buttonVacina}>Adicionar Vacina</button>
+         {errors.data && <p className={styles.mensagemErro}>Preencha todos os campos!</p>}
       </form>
 
       <div className={styles.vacinasList}>
