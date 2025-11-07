@@ -19,3 +19,16 @@ h3 {
 p {
   margin: 0.2rem 0;
 }
+
+.cardButtons {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.cardButtons button {
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
