@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import style from "../Cadastro/Cadastro.module.css";
-import { useAuth } from "../../Context";
+import { useAuth } from "../../Context/AuthContext";
 
 const Login = () => {
   const [name, setName] = useState("");
   const navigate = useNavigate();
-  const { setUser } = useAuth(); // pega a função para atualizar o user
+  const { setUser } = useAuth(); // pega a função pra atualizar o user
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    localStorage.setItem("usuario", name);
-    setUser(name); // atualiza o contexto, agora RotasPrivadas vai liberar
+    const userData = { name }; // você pode colocar email também depois
+    setUser(userData); // atualiza o contexto
+    localStorage.setItem("user", JSON.stringify(userData)); // salva igual ao authcontext
+
     navigate("/dashboard");
   };
 

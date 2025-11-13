@@ -5,7 +5,7 @@
   right: 0;
   display: flex;
   align-items: center;
-  gap: 14px; /* Espaço entre os botões */
+  gap: 14px;
   padding: 10px 16px;
   background: var(--aClaro);
   border-radius: 0 0 0 12px;
@@ -17,12 +17,12 @@
 /* Botões do painel */
 .painel button {
   font-size: 0.9rem;
-  padding: 8px 14px; /* Mais confortável */
+  padding: 8px 14px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background-color: var(--accent-color, var(--aCinza));
-  color: var(--text-color, var(--offwhite));
+  background-color: var(--aCinza);
+  color: var(--offwhite);
   font-weight: 600;
   transition: all 0.25s ease;
   white-space: nowrap;
@@ -37,7 +37,7 @@
 /* Texto dentro do painel */
 .painel span {
   font-size: 0.9rem;
-  color: var(--text-color, --preto);
+  color: var(--text-color);
   padding: 0 6px;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -73,6 +73,6 @@
   }
 
   .painel span.valor {
-    display: none; /* Oculta valor de fonte no mobile */
+    display: none;
   }
 }

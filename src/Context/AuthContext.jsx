@@ -1,20 +1,36 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
-// criação do contexto
 const AuthContext = createContext();
 
-// provedor -> fornecedor do contexto
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // Carrega usuário salvo no localStorage ao abrir o app
+  useEffect(() => {
+    const savedUser = localStorage.getItem("user");
+    if (savedUser) {
+      setUser(JSON.parse(savedUser));
+    }
+     setLoading(false);
+  }, []);
+
+  // Atualiza o localStorage sempre que user mudar
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("user", JSON.stringify(user));
+    } else {
+      localStorage.removeItem("user");
+    }
+  }, [user]);
 
   return (
-    <AuthContext.Provider value={{ user, setUser }}>
+    <AuthContext.Provider value={{ user, setUser, loading }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-// hook para acessar o contexto mais facilmente
 const useAuth = () => useContext(AuthContext);
 
 export { AuthProvider, useAuth, AuthContext };
