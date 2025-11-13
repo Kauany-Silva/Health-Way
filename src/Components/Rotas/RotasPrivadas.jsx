@@ -2,9 +2,10 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext"; 
 
 export const RotasPrivadas = () =>  { 
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const location = useLocation();
 
+  if (loading) return null; 
 // Se o usuário estiver logado, libera as rotas filhas
 // se não, vai pro login
 

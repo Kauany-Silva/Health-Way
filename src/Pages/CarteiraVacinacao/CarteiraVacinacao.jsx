@@ -1,63 +1,19 @@
-import { useState, useEffect } from 'react';
 import styles from './CarteiraVacinacao.module.css';
 import { VacinaCard, Skeleton } from '../../Components';
-import { getVacinas, addVacina, deleteVacina, updateVacina } from "../../API/vacinas";
+import { useCarteiraVacinacao } from './Hooks/useCarteiraVacinacao';
 
-const CarteiraVacinacao = () => {
-  const [vacinas, setVacinas] = useState([]);
-  const [form, setForm] = useState({ id: null, nome: '', data: '', dose: '' });
-  const [loading, setLoading] = useState(true);
-  const [errors, setErrors] = useState({ nome: false, data: false, dose: false });
+export function CarteiraVacinacao() {
 
-  useEffect(() => {
-    getVacinas().then(data => {
-      setVacinas(data);
-      setLoading(false);
-    });
-  }, []);
-
-  function handleDeleteVacina(id) {
-    deleteVacina(id).then(() => {
-      setVacinas(vacinas.filter(v => v.id !== id));
-    });
-  }
-
-  function handleEditVacina(vacina) {
-    setForm(vacina);
-  }
-
-  function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: false });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    const newErrors = {
-      nome: !form.nome,
-      data: !form.data,
-      dose: !form.dose
-    };
-
-    setErrors(newErrors);
-    if (Object.values(newErrors).some(Boolean)) return;
-
-    // EDITAR
-    if (form.id !== null) {
-      updateVacina(form.id, form).then(vacinaEditada => {
-        setVacinas(vacinas.map(v => (v.id === form.id ? vacinaEditada : v)));
-        setForm({ id: null, nome: '', data: '', dose: '' });
-      });
-      return;
-    }
-
-    // ADICIONAR
-    addVacina(form).then(novaVacina => {
-      setVacinas([...vacinas, novaVacina]);
-      setForm({ id: null, nome: '', data: '', dose: '' });
-    });
-  }
+  const {
+    vacinas,
+    form,
+    errors,
+    loading,
+    handleSubmit,
+    handleChange,
+    handleDeleteVacina,
+    handleEditVacina
+  } = useCarteiraVacinacao();
 
   return (
     <div className={styles.dashboard}>
@@ -65,40 +21,39 @@ const CarteiraVacinacao = () => {
       <h2 className={styles.tituloVacina}>Carteira de Vacinação</h2>
 
       <form className={styles.formVacina} onSubmit={handleSubmit}>
-        <input 
-  type="text" 
-  name="nome" 
-  placeholder="Nome da vacina" 
-  value={form.nome} 
-  onChange={handleChange} 
-  className={`${styles.inputVacina} ${errors.nome ? styles.erroInput : ''}`}
-/>
+        <input
+          type="text"
+          name="nome"
+          placeholder="Nome da vacina"
+          value={form.nome}
+          onChange={handleChange}
+          className={`${styles.inputVacina} ${errors.nome ? styles.erroInput : ''}`}
+        />
 
-<input 
-  type="date" 
-  name="data" 
-  value={form.data} 
-  onChange={handleChange}
-  className={`${styles.inputVacina} ${errors.data ? styles.erroInput : ''}`}
-/>
+        <input
+          type="date"
+          name="data"
+          value={form.data}
+          onChange={handleChange}
+          className={`${styles.inputVacina} ${errors.data ? styles.erroInput : ''}`}
+        />
 
-<input 
-  type="text" 
-  name="dose" 
-  placeholder="Dose" 
-  value={form.dose} 
-  onChange={handleChange}
-  className={`${styles.inputVacina} ${errors.dose ? styles.erroInput : ''}`}
-/>
-
+        <input
+          type="text"
+          name="dose"
+          placeholder="Dose"
+          value={form.dose}
+          onChange={handleChange}
+          className={`${styles.inputVacina} ${errors.dose ? styles.erroInput : ''}`}
+        />
 
         <button type="submit" className={styles.buttonVacina}>
           {form.id === null ? "Adicionar Vacina" : "Salvar Alterações"}
         </button>
-        {Object.values(errors).some(Boolean) && (
-  <p className={styles.mensagemErro}>Preencha todos os campos corretamente!</p>
-)}
 
+        {Object.values(errors).some(Boolean) && (
+          <p className={styles.mensagemErro}>Preencha todos os campos corretamente!</p>
+        )}
       </form>
 
       <div className={styles.vacinasList}>
@@ -119,6 +74,4 @@ const CarteiraVacinacao = () => {
       </div>
     </div>
   );
-};
-
-export { CarteiraVacinacao };
+}

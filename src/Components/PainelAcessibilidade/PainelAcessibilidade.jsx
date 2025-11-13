@@ -15,17 +15,16 @@ const PainelAcessibilidade = () => {
 
   // Alterna alto contraste
   useEffect(() => {
-  if (contrasteAtivo) {
-    document.documentElement.style.setProperty("--bg-color", "var(--aEscuro)"); 
-    document.documentElement.style.setProperty("--text-color", "var(--offwhite)");
-    document.documentElement.style.setProperty("--aMedio", "#1e88e5");
-  } else {
-    document.documentElement.style.setProperty("--bg-color", "var(--aClaro)");
-    document.documentElement.style.setProperty("--text-color", "var(--aEscuro)");
-    document.documentElement.style.setProperty("--aMedio", "#0077ff");
-  }
-}, [contrasteAtivo]);
-
+    if (contrasteAtivo) {
+      document.documentElement.style.setProperty("--bg-color", "var(--aEscuro)");
+      document.documentElement.style.setProperty("--text-color", "var(--offwhite)");
+      document.documentElement.style.setProperty("--aMedio", "#1e88e5");
+    } else {
+      document.documentElement.style.setProperty("--bg-color", "var(--aClaro)");
+      document.documentElement.style.setProperty("--text-color", "var(--aEscuro)");
+      document.documentElement.style.setProperty("--aMedio", "#0077ff");
+    }
+  }, [contrasteAtivo]);
 
   // Modo leitura (mouseover desktop e toque mobile)
   useEffect(() => {
@@ -63,14 +62,14 @@ const PainelAcessibilidade = () => {
     <div className={styles.painel}>
       {/* Controle de fonte */}
       <div className={styles.controleFonte}>
-        <button onClick={() => setFontSize(prev => Math.max(prev - 2, 12))}>
+        <button onClick={() => setFontSize((prev) => Math.max(prev - 2, 12))}>
           <span className={styles.desktop}>A-</span>
           <FaMinus className={styles.mobile} />
         </button>
 
         <span className={`${styles.valor} ${styles.desktop}`}>{fontSize}px</span>
 
-        <button onClick={() => setFontSize(prev => Math.min(prev + 2, 30))}>
+        <button onClick={() => setFontSize((prev) => Math.min(prev + 2, 30))}>
           <span className={styles.desktop}>A+</span>
           <FaPlus className={styles.mobile} />
         </button>
@@ -83,17 +82,21 @@ const PainelAcessibilidade = () => {
 
       {/* Alto contraste */}
       <div className={styles.contraste}>
-        <button onClick={() => setContrasteAtivo(prev => !prev)}>
+        <button onClick={() => setContrasteAtivo((prev) => !prev)}>
           <span className={styles.desktop}>
             {contrasteAtivo ? "Normal" : "Alto Contraste"}
           </span>
-          {contrasteAtivo ? <FaSun className={styles.mobile} /> : <FaMoon className={styles.mobile} />}
+          {contrasteAtivo ? (
+            <FaSun className={styles.mobile} />
+          ) : (
+            <FaMoon className={styles.mobile} />
+          )}
         </button>
       </div>
 
       {/* Modo leitura */}
       <div className={styles.leitor}>
-        <button onClick={() => setModoLeitura(prev => !prev)}>
+        <button onClick={() => setModoLeitura((prev) => !prev)}>
           <span className={styles.desktop}>
             {modoLeitura ? "Desativar Leitor" : "Ativar Leitor"}
           </span>
