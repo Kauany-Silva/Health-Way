@@ -1,6 +1,6 @@
 .medicamentosPage {
   padding: 30px;
-  background: var(--offwhite);
+  background: var(--bg-color);
   min-height: 100%;
   border-radius: 12px;
 }
@@ -8,12 +8,12 @@
 .titulo {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: var(--cinza);
+  color: var(--text-color);
 }
 
 .subtitulo {
   margin-bottom: 30px;
-  color: var(--cinzaclaro);
+  color: var(--text-color);
 }
 
 .tabela {
@@ -31,7 +31,7 @@
 
 .tabela th {
   background: var(--aCeu);
-  color: var(--cinza);
+  color: var(--text-color);
 }
 
 .tabela tr:nth-child(even) {
@@ -55,4 +55,27 @@
 .botaoEditar:hover {
   background-color: var(--aCinza);
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .tabela {
+    display: block;              /* transforma a tabela em bloco */
+    overflow-x: auto;            /* adiciona rolagem horizontal */
+    white-space: nowrap;         /* impede quebra das colunas */
+    border-radius: 12px;
+  }
+
+  .tabela th,
+  .tabela td {
+    white-space: nowrap;       
+  }
+
+  .tabela::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .tabela::-webkit-scrollbar-thumb {
+    background-color: var(--aCinza);
+    border-radius: 4px;
+  }
 }

@@ -11,20 +11,18 @@ import {
 
 import styles from "./Dashboard.module.css";
 
-import LogoSlogan from "../../Assets/Imagens/Logo-HealthWay-Slogan.png";
+import LogoSlogan from "../../Assets/Imagens/Logo.png";
 import MedicaVacinacao from "../../Assets/Imagens/MedicaVacinacao.jpg";
 import MosquitoDengue from "../../Assets/Imagens/MosquitoDengue.jpg";
 import AtividadeFisica from "../../Assets/Imagens/AtividadeFisica.jpg";
 
 const Dashboard = () => {
-  // Pega o usuário salvo
   const userStorage = JSON.parse(localStorage.getItem("user") || "null");
   const usuario = userStorage?.name || userStorage?.nome || "Usuário";
 
   const location = useLocation();
   const estaNaRotaPrincipal = location.pathname === "/dashboard";
 
-  // Notícias
   const noticiasSaude = [
     {
       titulo: "Campanha Nacional de Vacinação 2025 começa este mês",
@@ -52,25 +50,25 @@ const Dashboard = () => {
         <h2 className={styles.titulo}>Health Way</h2>
         <nav className={styles.menu}>
           <Link to="/dashboard" className={styles.menuItem}>
-            <FaHome /> Início
+            <FaHome className={styles.icon}/> <span className={styles.menuText}>Início</span>
           </Link>
           <Link to="vacinacao" className={styles.menuItem}>
-            <FaSyringe /> Carteira de Vacinação
+            <FaSyringe className={styles.icon}/> <span className={styles.menuText}>Carteira de Vacinação</span>
           </Link>
           <Link to="hospitais" className={styles.menuItem}>
-            <FaHospital /> Localizar Hospitais
+            <FaHospital className={styles.icon}/> <span className={styles.menuText}>Localizar Hospitais</span>
           </Link>
           <Link to="consultas" className={styles.menuItem}>
-            <FaCalendarCheck /> Consultas
+            <FaCalendarCheck className={styles.icon}/> <span className={styles.menuText}>Consultas</span>
           </Link>
           <Link to="medicamentos" className={styles.menuItem}>
-            <FaPills /> Medicamentos
+            <FaPills className={styles.icon}/> <span className={styles.menuText}>Medicamentos</span>
           </Link>
           <Link to="pets" className={styles.menuItem}>
-            <FaPaw /> Pets
+            <FaPaw className={styles.icon}/> <span className={styles.menuText}>Pets</span>
           </Link>
           <Link to="/" className={styles.menuItem}>
-            <FaSignOutAlt /> Sair
+            <FaSignOutAlt className={styles.icon}/> <span className={styles.menuText}>Sair</span>
           </Link>
         </nav>
       </aside>
@@ -78,12 +76,9 @@ const Dashboard = () => {
       <main className={styles.conteudo}>
         {estaNaRotaPrincipal ? (
           <>
-            {/* Cabeçalho */}
             <header className={styles.headerRow}>
               <div className={styles.bemVindo}>
-                <h1 className={styles.nomeUsuario}>
-                  Bem-vindo, {usuario} 👋
-                </h1>
+                <h1 className={styles.nomeUsuario}>Bem-vindo, {usuario} 👋</h1>
                 <p className={styles.subtitulo}>Acompanhe sua saúde aqui</p>
               </div>
               <div className={styles.logoWrapper}>
@@ -110,10 +105,9 @@ const Dashboard = () => {
                   </Link>
                 </div>
               </div>
-
             </section>
 
-            <section className={styles.CarrosseNoticias}>
+            <section className={styles.CarrosselNoticias}>
               <h2>Em destaque 🩺</h2>
               <div className={styles.carouselContainer}>
                 {noticiasSaude.map((noticia, index) => (

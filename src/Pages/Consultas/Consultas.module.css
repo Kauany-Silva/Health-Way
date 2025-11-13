@@ -1,6 +1,6 @@
 .consultasPage {
   padding: 30px;
-  background: var(--offwhite);
+  background: var(--bg-color);
   min-height: 100%;
   border-radius: 12px;
 }
@@ -8,12 +8,12 @@
 .titulo {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: var(--cinza);
+  color: var(--text-color);
 }
 
 .subtitulo {
   margin-bottom: 30px;
-  color: var(--cinzaclaro);
+  color: var(--text-color);
 }
 
 .listaConsultas {
@@ -23,13 +23,13 @@
 }
 
 .cardConsulta {
-  background: rgba(0,0,0,0.05);
+  background: var(--aCinza);
   backdrop-filter: blur(6px);
   padding: 20px;
   border-radius: 12px;
   flex: 1 1 220px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  color: var(--cinza);
+  color: var(--text-color);
 }
 
 .cardConsulta:hover {
