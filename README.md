@@ -1,6 +1,6 @@
 # 🌐 Health Way
 
-**Health Way** é uma aplicação web desenvolvida como projeto de startup para a ETEC.  
+**Health Way** é uma aplicação web desenvolvida como projeto de startup para a ETEC Dr. Geraldo José Rodrigues Alckmin.  
 Nosso objetivo é ajudar pessoas a organizarem suas vacinas e exames de forma simples, segura e acessível.
 
 ---
@@ -45,7 +45,8 @@ Com o site, o usuário pode:
 - CSS Modules
 - React Router
 - React Icons
-- Leaflet & React-Leaflet  
+- Leaflet & React-Leaflet
+- JSON Server
 
 
 ## 📂 Estrutura do Projeto
@@ -66,6 +67,8 @@ Todos os componentes reutilizáveis estão na pasta `src/Components` e exportado
 - **Sobre:** Apresentação da equipe.  
 - **VacinaCard:** Card individual de vacinas ou exames.  
 - **ScrollToTop** Gerenciamento da rolagem da página.
+- **Rotas** Organização das rotas/path da aplicação.
+- **RotasPrivadas** Controle de acesso às rotas privadas.
 
 ### Pages
 As páginas correspondem às rotas da aplicação e estão em `src/Pages`:
@@ -75,11 +78,12 @@ As páginas correspondem às rotas da aplicação e estão em `src/Pages`:
 - **Cadastro:** Tela de cadastro de novos usuários.  
 - **SaibaMaisSobreNos:** Página com informações detalhadas sobre a startup e equipe.  
 - **Dashboard:** Painel principal do usuário com rotas filhas:  
-- **Vacinacao:** Histórico e cadastro de vacinas.  
+- **CarteiraVacinacao:** Histórico e cadastro de vacinas.  
 - **Pets:** Controle de informações de animais de estimação.  
 - **LocalHospital:** Consulta de hospitais próximos e tempo de espera.  
 - **Consultas:** Histórico e agendamento de consultas médicas.  
 - **Medicamentos:** Controle de medicamentos e doses.
+- **NotFound:** Página dedicada à erros de rotas.
 
 ## Referências
 
@@ -120,8 +124,11 @@ cd health-way
 # Instalar dependências
 npm install  # ou yarn
 
+# Rodar API
+npm run api # ou yarn api
+
 # Rodar em modo de desenvolvimento
-npm run dev  # ou yarn dev 
+npm run dev  # ou yarn dev
 ```
 
 
