@@ -1,9 +1,13 @@
 .dashboard {
   display: flex;
   min-height: 100vh;
-  background: var(--aEscuro);
-  color: var(--offwhite);
+  background: var(--bg-color);
+  color: var(--text-color);
   font-family: Arial, sans-serif;
+}
+
+.icon {
+  color: var(--text-color);
 }
 
 /* Menu lateral */
@@ -15,6 +19,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .titulo {
@@ -29,21 +34,28 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .menuItem {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--offwhite);
   text-decoration: none;
   padding: 10px 15px;
   border-radius: 12px;
   transition: background 0.3s;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.menuText {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--text-color);
+}
+
+
 .menuItem:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--aCinza);
 }
 
 /* Área de conteúdo (painel à direita) */
@@ -56,6 +68,7 @@
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   box-sizing: border-box;
+  
 }
 
 /* Cabeçalho com bem-vindo e logo alinhados */
@@ -87,13 +100,14 @@
 
 /* logo alinhada à direita do cabeçalho */
 .logoWrapper {
+  margin-top: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .logoDashboard {
-  height: 70px;
+  height: 90px;
   width: auto;
   opacity: 0.95;
 }
@@ -184,6 +198,45 @@
     gap: 12px;
   }
 }
+
+  @media (max-width: 720px) {
+  .sidebar {
+    width: 60px;
+    padding: 20px 10px;
+    align-items: center;
+  }
+
+  .titulo {
+    display: none;
+  }
+
+  .menuItem {
+    justify-content: center;
+    padding: 10px 0;
+    gap: 0;
+  }
+
+  .menuItem svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .menuText {
+    display: none;
+  }
+
+  .conteudo {
+    padding: 20px 10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+  .conteudo {
+    padding: 20px 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
 
 .noticiasCarrossel {
   margin-top: 30px;
