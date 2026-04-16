@@ -9,10 +9,6 @@ import Yasmin from "../../Assets/Imagens/Yasmin.jpg";
 
 const SaibaMaisSobreNos = () => {
 
-
-  // Atualiza fonte global
- 
-
   return (
     <section className={styles.saibaMais}>
       <div className={styles.container}>
