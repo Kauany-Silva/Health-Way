@@ -16,9 +16,9 @@ const Contato = ({id}) => {
           
           <p>Livia Paiva:          <span  className={styles.instagram}><a href="https://www.instagram.com/lemosz.l">lemosz.l</a></span></p>
           
-          <p>Maria Julia:          <span className={styles.instagram}><a href="https://www.instagram.com/piresmim_">piresmim_</a></span></p>
+          <p>Maria Julia:          <span className={styles.instagram}><a href="https://www.instagram.com/maria_julia1410">maria_julia1410</a></span></p>
           
-          <p>Yasmin Salgado:          <span className={styles.instagram}><a href="https://www.instagram.com/maria_julia1410">maria_julia1410</a></span></p>
+          <p>Yasmin Salgado:          <span className={styles.instagram}><a href="https://www.instagram.com/piresmim__">piresmim_</a></span></p>
           <p>(12) 99211-8277</p>
         </div>
 
