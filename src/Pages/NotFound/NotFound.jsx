@@ -1,6 +1,6 @@
 import style from "./NotFound.module.css";
 import { Link } from "react-router-dom";
-import HToy2 from "../../Assets/Imagens/HToy2.jpg";
+import HToy2 from "../../Assets/Imagens/HToy2.png";
 
 const NotFound = () => {
   return (
