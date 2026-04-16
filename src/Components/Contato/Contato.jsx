@@ -35,7 +35,6 @@ const Contato = ({id}) => {
           <textarea
             className={styles.inputContato}
             placeholder="Sua Mensagem"
-            rows="5"
             required
           ></textarea>
           <button type="submit" className={styles.botaoContato}>
