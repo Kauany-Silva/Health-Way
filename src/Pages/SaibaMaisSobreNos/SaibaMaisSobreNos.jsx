@@ -9,6 +9,15 @@ import Yasmin from "../../Assets/Imagens/Yasmin.jpg";
 
 const SaibaMaisSobreNos = () => {
 
+  const [fontSize, setFontSize] = useState(16);
+  const [contrasteAtivo, setContrasteAtivo] = useState(false);
+  const [modoLeitura, setModoLeitura] = useState(false);
+
+  // Atualiza a fonte global
+  useEffect(() => {
+    document.documentElement.style.setProperty("--font-base", `${fontSize}px`);
+  }, [fontSize]);
+  
   return (
     <section className={styles.saibaMais}>
       <div className={styles.container}>
