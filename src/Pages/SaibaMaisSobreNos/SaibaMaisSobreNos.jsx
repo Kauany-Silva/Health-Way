@@ -11,9 +11,7 @@ const SaibaMaisSobreNos = () => {
 
 
   // Atualiza fonte global
-  useEffect(() => {
-    document.documentElement.style.setProperty("--font-base", `${fontSize}px`);
-  }, [fontSize]);
+ 
 
   return (
     <section className={styles.saibaMais}>
