@@ -8,7 +8,7 @@ Nosso objetivo é ajudar pessoas a organizarem suas vacinas e exames de forma si
 ## 👨‍👩‍👧‍👦 Equipe
 
 - **Kauany Cristine da Silva Moraes** – Líder do Projeto/ Desenvolvedora do Código Principal
-- **Lívia Fernanda Lemos de Paiva** – Desenvolvedora Front-end   
+- **Livia Fernanda Lemos de Paiva** – Desenvolvedora Front-end   
 - **Maria Julia Costa** – Designer UI/UX  
 - **Yasmin Salgado Antunes Pires** – Branding/ Identidade Visual
 
