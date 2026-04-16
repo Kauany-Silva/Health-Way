@@ -32,11 +32,12 @@ const Contato = ({id}) => {
             placeholder="Seu Email"
             required
           />
-          <textarea
+          <input
+            type="text"
             className={styles.inputContato}
             placeholder="Sua Mensagem"
             required
-          ></textarea>
+          />
           <button type="submit" className={styles.botaoContato}>
             Enviar Mensagem
           </button>
