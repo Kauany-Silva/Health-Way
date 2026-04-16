@@ -12,10 +12,13 @@ const Contato = ({id}) => {
             Quer saber mais ou tem alguma dúvida?  
             Preencha o formulário ao lado e responderemos o quanto antes.
           </p>
-          <p>Kauany Silva:          <span className={styles.instagram}>@kauanycsilva._</span></p>
-          <p>Livia Paiva:          <span  className={styles.instagram}>@wtf_lica</span></p>
-          <p>Maria Julia:          <span className={styles.instagram}>@maria_julia1410</span></p>
-          <p>Yasmin Salgado:          <span className={styles.instagram}>@piresmim_</span></p>
+          <p>Kauany Silva:          <span className={styles.instagram}><a href="https://www.instagram.com/kauanycsilva._">kauanycsilva._</a></span></p>
+          
+          <p>Livia Paiva:          <span  className={styles.instagram}><a href="https://www.instagram.com/lemosz.l">lemosz.l</a></span></p>
+          
+          <p>Maria Julia:          <span className={styles.instagram}><a href="https://www.instagram.com/piresmim_">piresmim_</a></span></p>
+          
+          <p>Yasmin Salgado:          <span className={styles.instagram}><a href="https://www.instagram.com/maria_julia1410">maria_julia1410</a></span></p>
           <p>(12) 99211-8277</p>
         </div>
 
