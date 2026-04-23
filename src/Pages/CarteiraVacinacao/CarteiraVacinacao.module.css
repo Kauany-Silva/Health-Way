@@ -151,7 +151,7 @@ body {
 /* VAZIO */
 .vazio {
   text-align: center;
-  color: #93c5fd;
+  color: var(--aEscuro);
   margin-top: 15px;
 }
 
