@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getVacinas, addVacina, deleteVacina, updateVacina } from "../../../API/vacinas";
+import { getVacinas, addVacina, deleteVacina, updateVacina } from "../../../Backend/vacinas";
 
 export function useCarteiraVacinacao() {
 

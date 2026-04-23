@@ -41,6 +41,6 @@
 }
 
 .Healthinho {
-  width: 25px;
-  height: auto;
+  display: flex;
+  justify-content: center;
 }
