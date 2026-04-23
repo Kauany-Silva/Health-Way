@@ -16,13 +16,13 @@
 .Cabecalho h1 {
   font-size: 2rem;
   margin: 0;
-  font-family: 'Allura', cursive;
+  font-family: var(--font-principal);
   color: var(--text-color); /* texto ajusta conforme contraste */
 }
 
 @font-face {
-  font-family: 'Allura';
-  src: url('../../Assets/Fontes/Allura-Regular.woff') format('woff');
+  font-family: var(--font-principal);
+  src: url('../../Assets/Fontes/LuxuriousScript-Regular') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
