@@ -5,9 +5,7 @@ import Kauany from "../../Assets/Imagens/Kauany.jpg";
 import Livia from "../../Assets/Imagens/Livia.jpg"; 
 import Maria from "../../Assets/Imagens/Maria.jpg"; 
 import Yasmin from "../../Assets/Imagens/Yasmin.jpg";
-const Sobre = ({ id }) =>
-
-  return (
+const Sobre = ({ id }) => (
     <section id={id} className={styles.sobre}>
       <div className={styles.container}>
         <div className={styles.texto}>
