@@ -123,7 +123,6 @@ const hospitais = [
   },
 ];
 
-// Ícones corrigidos
 const hospitalIcon = new L.Icon({
   iconUrl: "flaticon.com",
   iconSize: [32, 32],
@@ -137,46 +136,77 @@ const userIcon = new L.Icon({
 });
 
 const LocalHospital = () => {
-  const [statusTexto, setStatusTexto] = useState("Carregando sua localização...");
+  const [statusTexto, setStatusTexto] = useState("Digite um CEP para buscar a localização.");
   const [mapCenter, setMapCenter] = useState([-23.55052, -46.633308]); 
   const [userCoords, setUserCoords] = useState(null);
+  const [cep, setCep] = useState(""); // Estado para guardar o CEP digitado
 
-  useEffect(() => {
-    // 1. INSIRA SUA CHAVE DA API AQUI DENTRO DAS ASPAS
-    const apiKey = 'SUA_CHAVE_AQUI'; 
+  const buscarCep = (e) => {
+    e.preventDefault();
     
-    // 2. URL CORRIGIDA (Sem erros de sintaxe)
-    const url = `ipgeolocation.io{apiKey}`;
+    // Remove traços ou espaços que o usuário possa digitar
+    const cepLimpo = cep.replace(/\D/g, "");
 
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Erro na API: ${response.status}`);
-        }
-        return response.json();
-      })
+    if (cepLimpo.length !== 8) {
+      setStatusTexto("Por favor, digite um CEP válido com 8 números.");
+      return;
+    }
+
+    setStatusTexto("Buscando endereço...");
+
+    // 1. Busca os dados de endereço na API ViaCEP
+    fetch(`viacep.com.br{cepLimpo}/json/`)
+      .then(response => response.json())
       .then(data => {
-        setStatusTexto(`Você está acessando de ${data.city}, ${data.country_name}`);
-        
-        const lat = parseFloat(data.latitude);
-        const lng = parseFloat(data.longitude);
-        
-        if (!isNaN(lat) && !isNaN(lng)) {
-          setMapCenter([lat, lng]);
-          setUserCoords([lat, lng]);
+        if (data.erro) {
+          throw new Error("CEP não encontrado.");
+        }
+
+        const enderecoCompleto = `${data.logradouro}, ${data.bairro}, ${data.localidade} - ${data.uf}`;
+        setStatusTexto(`Endereço encontrado: ${enderecoCompleto}`);
+
+        // 2. Transforma o endereço retornado em coordenadas (Latitude e Longitude) via Nominatim OpenStreetMap
+        const queryEndereco = encodeURIComponent(`${data.logradouro}, ${data.localidade}, Brasil`);
+        return fetch(`openstreetmap.org{queryEndereco}&limit=1`);
+      })
+      .then(response => response.json())
+      .then(geoData => {
+        if (geoData && geoData.length > 0) {
+          const lat = parseFloat(geoData[0].lat);
+          const lon = parseFloat(geoData[0].lon);
+
+          // Atualiza o centro do mapa e o marcador do usuário
+          setMapCenter([lat, lon]);
+          setUserCoords([lat, lon]);
+        } else {
+          console.warn("Não foi possível gerar as coordenadas exatas deste endereço no mapa.");
         }
       })
       .catch(error => {
         console.error(error);
-        setStatusTexto("Não foi possível carregar sua localização.");
+        setStatusTexto("Erro ao buscar o CEP. Verifique o número digitado.");
       });
-  }, []);
+  };
 
   return (
     <section className={styles.hospitais}>
       <h2 className={styles.tituloHospital}>Hospitais próximos</h2>
       
-      {/* Comentário substituído pelo parágrafo dinâmico solicitado */}
+      {/* Formulário de Busca por CEP */}
+      <form onSubmit={buscarCep} style={{ marginBottom: "20px" }}>
+        <input 
+          type="text" 
+          placeholder="Digite o CEP (ex: 01001000)" 
+          value={cep}
+          onChange={(e) => setCep(e.target.value)}
+          maxLength={9}
+          style={{ padding: "8px", borderRadius: "6px", border: "1px solid #ccc", marginRight: "10px" }}
+        />
+        <button type="submit" style={{ padding: "8px 16px", borderRadius: "6px", background: "#007bff", color: "#fff", border: "none", cursor: "pointer" }}>
+          Buscar endereço
+        </button>
+      </form>
+
       <p className={styles.subtituloHospital}>
         {statusTexto}
       </p>
@@ -197,7 +227,7 @@ const LocalHospital = () => {
 
             {userCoords && (
               <Marker position={userCoords} icon={userIcon}>
-                <Popup>Você está aqui</Popup>
+                <Popup>Sua busca está aqui</Popup>
               </Marker>
             )}
 
@@ -232,4 +262,5 @@ const LocalHospital = () => {
 };
 
 export { LocalHospital };
+
 
