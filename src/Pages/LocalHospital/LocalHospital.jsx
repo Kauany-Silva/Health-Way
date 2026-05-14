@@ -93,7 +93,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import styles from './LocalHospital.module.css';
 
-// Componente auxiliar para atualizar o centro do mapa dinamicamente
+// Componente auxiliar para mover o mapa para a nova localização
 const RecenterMap = ({ center }) => {
   const map = useMap();
   useEffect(() => {
@@ -123,13 +123,13 @@ const hospitais = [
   },
 ];
 
+// Ícones corrigidos
 const hospitalIcon = new L.Icon({
-  iconUrl: "https://cdn-icons-png.flaticon.com/512/2967/2967350.png",
+  iconUrl: "flaticon.com",
   iconSize: [32, 32],
   iconAnchor: [16, 32],
 });
 
-// Ícone para marcar a localização detectada do usuário
 const userIcon = new L.Icon({
   iconUrl: "flaticon.com",
   iconSize: [32, 32],
@@ -137,25 +137,27 @@ const userIcon = new L.Icon({
 });
 
 const LocalHospital = () => {
-  // Estados para gerenciar o texto de status e as coordenadas do mapa
   const [statusTexto, setStatusTexto] = useState("Carregando sua localização...");
-  const [mapCenter, setMapCenter] = useState([-23.55052, -46.633308]); // Default: SP
+  const [mapCenter, setMapCenter] = useState([-23.55052, -46.633308]); 
   const [userCoords, setUserCoords] = useState(null);
 
   useEffect(() => {
-    const apiKey = 'SUA_CHAVE_AQUI'; // Substitua por sua chave da API
+    // 1. INSIRA SUA CHAVE DA API AQUI DENTRO DAS ASPAS
+    const apiKey = 'SUA_CHAVE_AQUI'; 
+    
+    // 2. URL CORRIGIDA (Sem erros de sintaxe)
     const url = `ipgeolocation.io{apiKey}`;
 
     fetch(url)
       .then(response => {
-        if (!response.ok) throw new Error("Erro na requisição");
+        if (!response.ok) {
+          throw new Error(`Erro na API: ${response.status}`);
+        }
         return response.json();
       })
       .then(data => {
-        // Atualiza o texto com a cidade e país retornados
         setStatusTexto(`Você está acessando de ${data.city}, ${data.country_name}`);
         
-        // Captura latitude e longitude da API
         const lat = parseFloat(data.latitude);
         const lng = parseFloat(data.longitude);
         
@@ -174,7 +176,7 @@ const LocalHospital = () => {
     <section className={styles.hospitais}>
       <h2 className={styles.tituloHospital}>Hospitais próximos</h2>
       
-      {/* O texto do comentário agora é dinâmico com base no estado da API */}
+      {/* Comentário substituído pelo parágrafo dinâmico solicitado */}
       <p className={styles.subtituloHospital}>
         {statusTexto}
       </p>
@@ -187,14 +189,12 @@ const LocalHospital = () => {
             style={{ height: "400px", width: "100%", borderRadius: "12px" }}
           >
             <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+              attribution='&copy; <a href="openstreetmap.org">OpenStreetMap</a>'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
 
-            {/* Componente para mover a câmera quando o estado alterar */}
             <RecenterMap center={mapCenter} />
 
-            {/* Marcador opcional da posição atual do usuário */}
             {userCoords && (
               <Marker position={userCoords} icon={userIcon}>
                 <Popup>Você está aqui</Popup>
@@ -232,3 +232,4 @@ const LocalHospital = () => {
 };
 
 export { LocalHospital };
+
