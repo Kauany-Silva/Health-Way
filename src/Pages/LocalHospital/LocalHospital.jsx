@@ -3,7 +3,7 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import styles from './LocalHospital.module.css';
 import { useState } from "react";
-import { buscarCEP } from "../../api/geolocalizacao.js";
+import { buscarCEP } from "../../API/geolocalizacao";
 
 
 const hospitais = [
