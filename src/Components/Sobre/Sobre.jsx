@@ -27,6 +27,6 @@ const Sobre = ({ id }) => (
       </div>
     </section>
   );
-};
+
 
 export {Sobre};
