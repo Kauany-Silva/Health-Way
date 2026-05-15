@@ -27,7 +27,7 @@ const hospitais = [
   },
 ];
 
-// Ícone customizado para os marcadores
+// ícone customizado para os marcadores
 const hospitalIcon = new L.Icon({
   iconUrl: "https://cdn-icons-png.flaticon.com/512/2967/2967350.png",
   iconSize: [32, 32],
