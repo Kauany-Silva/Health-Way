@@ -1,15 +1,41 @@
-// chave api geolocalização: 6bd8b0a9c42c434eb2c7c341288caaf4
+async function buscarCEP() {
 
-// Substitua "SUA_CHAVE_AQUI" pela chave que você recebeu no cadastro
-const apiKey = '6bd8b0a9c42c434eb2c7c341288caaf4I'; 
-const url = `https://ipgeolocation.io{apiKey}`;
+  const cep = document
+    .getElementById("cep")
+    .value
+    .replace(/\D/g, "");
 
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-    // Exemplo de como usar os dados retornados
-    document.getElementById('localizacao-usuario').innerText = `Você está acessando de ${data.city}, ${data.country_name}`;
-  })
-  .catch(error => console.error('Erro ao buscar a geolocalização:', error));
+  if (cep.length !== 8) {
+    alert("CEP inválido");
+    return;
+  }
 
+  try {
+
+    const resposta = await fetch(
+      `https://viacep.com.br/ws/${cep}/json/`
+    );
+
+    const dados = await resposta.json();
+
+    if (dados.erro) {
+      document.getElementById("endereco").innerHTML =
+        "CEP não encontrado";
+      return;
+    }
+
+    document.getElementById("endereco").innerHTML = `
+      <p><strong>Rua:</strong> ${dados.logradouro}</p>
+      <p><strong>Bairro:</strong> ${dados.bairro}</p>
+      <p><strong>Cidade:</strong> ${dados.localidade}</p>
+      <p><strong>Estado:</strong> ${dados.uf}</p>
+    `;
+
+  } catch (erro) {
+
+    document.getElementById("endereco").innerHTML =
+      "Erro ao buscar endereço";
+
+    console.log(erro);
+  }
+}
