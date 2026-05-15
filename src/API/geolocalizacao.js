@@ -1,41 +1,30 @@
-async function buscarCEP() {
+export async function buscarCEP(cep, setEndereco) {
 
-  const cep = document
-    .getElementById("cep")
-    .value
-    .replace(/\D/g, "");
+  const cepLimpo = cep.replace(/\D/g, "");
 
-  if (cep.length !== 8) {
-    alert("CEP inválido");
+  if (cepLimpo.length !== 8) {
+    setEndereco("CEP inválido");
     return;
   }
 
   try {
 
     const resposta = await fetch(
-      `https://viacep.com.br/ws/${cep}/json/`
+      `https://viacep.com.br/ws/${cepLimpo}/json/`
     );
 
     const dados = await resposta.json();
 
     if (dados.erro) {
-      document.getElementById("endereco").innerHTML =
-        "CEP não encontrado";
+      setEndereco("CEP não encontrado");
       return;
     }
 
-    document.getElementById("endereco").innerHTML = `
-      <p><strong>Rua:</strong> ${dados.logradouro}</p>
-      <p><strong>Bairro:</strong> ${dados.bairro}</p>
-      <p><strong>Cidade:</strong> ${dados.localidade}</p>
-      <p><strong>Estado:</strong> ${dados.uf}</p>
-    `;
+    setEndereco(
+      `${dados.logradouro}, ${dados.bairro} - ${dados.localidade}/${dados.uf}`
+    );
 
   } catch (erro) {
-
-    document.getElementById("endereco").innerHTML =
-      "Erro ao buscar endereço";
-
-    console.log(erro);
+    setEndereco("Erro ao buscar CEP");
   }
 }
