@@ -5,7 +5,6 @@ import { RotasPrivadas } from './RotasPrivadas';
 import { Landing } from '../../Pages/Landing';
 import { Login } from '../../Pages/Login';
 import { Cadastro } from '../../Pages/Cadastro';
-import { SaibaMaisSobreNos } from '../../Pages/SaibaMaisSobreNos';
 
 // Dashboard e rotas filhas
 import { Dashboard } from '../../Pages/Dashboard';
@@ -25,7 +24,6 @@ const Rotas = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="/saibamaissobrenos" element={<SaibaMaisSobreNos />} />
 
         {/* Rotas privadas protegidas */}
     <Route element={<RotasPrivadas />}>

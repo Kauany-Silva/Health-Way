@@ -1,83 +1,168 @@
-.dashboard {
-  max-width: 600px;
-  margin: 2rem auto;
-  background: var(--aCinza);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  color: var(--aClaro);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* FUNDO */
+body {
+  background: #e7f1f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
 }
 
+/* CONTAINER */
+.dashboard {
+  width: 420px;
+  margin: 50px auto;
+  background: var(--aCinza);
+  border-left: 6px solid var(--aEscuro);
+  border-radius: 14px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* CONTEÚDO INTERNO */
+.conteudo {
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* TÍTULOS */
 .nomeDashboard {
-    font-family: "Allura", cursive;
-    color: var(--aEscuro);
-    text-align: center;
+  text-align: center;
+  color: #1e3a8a;
+  margin: 0;
 }
 
 .tituloVacina {
-  font-family: Georgia, 'Times New Roman', Times, serif;
   text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--offwhite);
-}
-
-.formVacina {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  justify-content: center;
-}
-
-.inputVacina {
-  flex: 1 1 150px;
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--aPastel);
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.inputVacina:focus {
-  border-color: var(--aCeu);
-  outline: none;
-}
-
-.buttonVacina {
-  background-color: var(--aPastel);
-  border: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 8px;
   color: var(--aEscuro);
-  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* INPUTS */
+.inputBusca,
+.inputVacina {
+  margin-bottom: 7px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  border: 1px solid #bfdbfe;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.inputBusca:focus,
+.inputVacina:focus {
+  margin-bottom: 7px;
+  flex-wrap: wrap;
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+/* BOTÃO PRINCIPAL */
+.buttonVacina {
+  width: 100%;
+  padding: 11px;
+  background: var(--aEscuro);
+  color: white;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  flex: 1 1 100px;
+  transition: all 0.2s ease;
+  margin-top: 5px;
 }
 
 .buttonVacina:hover {
-  background-color: var(--aCeu);
+  background: #1e40af;
 }
 
+.buttonVacina:active {
+  transform: scale(0.98);
+}
+
+/* LISTA */
 .vacinasList {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 10px;
 }
 
-.erroInput {
-  border-color: var(--vermelho);
+/* REGISTRO */
+.registro {
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
+  border-left: 4px solid var(--aEscuro);
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
-.mensagemErro {
-  color: var(--vermelho);
-  font-size: medium;
-  font-weight: bold;
-  background-color: var(--aClaro);
-  align-items: center;
+.registro:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* AÇÕES (BOTÕES DO CARD) */
+.acoes {
+  margin-top: 8px;
+  display: flex;
+  gap: 6px;
+}
+
+/* BOTÕES PADRÃO */
+.acoes button {
+  flex: 1;
+  padding: 6px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* EDITAR */
+.acoes button:first-child {
+  background:var(--aClaro);
+  color: #142b6c;
+}
+
+/* EXCLUIR */
+.acoes button:last-child {
+  background: var(--aMedio );
+  color: white;
+}
+
+/* HOVER */
+.acoes button:hover {
+  opacity: 0.9;
+}
+
+/* ANIMAÇÃO EXCLUIR */
+.removendo {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: 0.3s;
+}
+
+/* VAZIO */
+.vazio {
   text-align: center;
-  margin-top: 10px;
-  
+  color: var(--aEscuro);
+  margin-top: 15px;
 }
 
+/* RESPONSIVO */
+@media (max-width: 500px) {
+  .dashboard {
+    width: 90%;
+    padding: 25px 15px;
+  }
+
+  .conteudo {
+    max-width: 100%;
+  }
+}
