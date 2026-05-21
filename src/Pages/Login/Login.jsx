@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import style from "../Cadastro/Cadastro.module.css";
 import { useAuth } from "../../Context/AuthContext";
+import heroVideo from "../../Assets/Videos/hero.mp4";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -20,6 +21,13 @@ const Login = () => {
 
   return (
     <div className={style.container}>
+
+      <section className={style.hero}>
+              <video autoPlay loop muted playsInline className={style.videoBg}>
+                <source src={heroVideo} type="video/mp4"/>
+              </video>
+            </section>
+
       <div className={style.box}>
         <div className={style.titulo}>
           <h1>Health Way</h1>

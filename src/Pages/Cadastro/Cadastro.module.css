@@ -1,5 +1,3 @@
-
-
 /* Fundo completo */
 .container {
   display: flex;
@@ -8,6 +6,8 @@
   min-height: 100vh;
   backdrop-filter: blur(4px);
   background-color: var(--aEscuro);
+  position: relative;
+  z-index: 1;
 }
 
 /* Caixa principal */
@@ -26,7 +26,7 @@
 }
 
 .titulo {
-    font-family: "Allura", cursive;
+    font-family: "Luxurious_Script", cursive;
     color: var(--amarelo);
     
 }
@@ -100,4 +100,22 @@
   color: var(--aPastel);
   text-decoration: underline;
   
+}
+.hero {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  inset: 0;
+}
+
+.videoBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  inset: 0;
 }
