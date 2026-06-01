@@ -1,147 +1,302 @@
-.medicamentosPage {
-  padding: 30px;
-  background: var(--bg-color);
-  min-height: 100%;
-  border-radius: 12px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.titulo {
-  font-size: 2rem;
+.container {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(
+    180deg,
+    var(--aClaro) 100%
+  );
+  min-height: 100vh;
+  padding: 40px;
+  color: var(--text-color);
+}
+
+.container h1 {
+  font-size: 34px;
   margin-bottom: 10px;
-  color: var(--text-color);
+  color: var(--aEscuro);
 }
 
-.subtitulo {
-  margin-bottom: 30px;
-  color: var(--text-color);
+.sub {
+  color: var(--aEscuro);
+  margin-bottom: 25px;
+  font-size: 16px;
 }
 
-.tabela {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--aClaro);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.tabela th, .tabela td {
-  padding: 12px 15px;
-  text-align: left;
-}
-
-.tabela th {
-  background: var(--aCeu);
-  color: var(--text-color);
-}
-
-.tabela tr:nth-child(even) {
-  background: rgba(0,0,0,0.03);
-}
-
-.tabela tr:hover {
-  background: rgba(0,0,0,0.08);
-}
-
-.botaoEditar {
-  padding: 6px 12px;
-  border: none;
-  background-color: var(--aCinza);
-  color: var(--offwhite);
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.botaoEditar:hover {
-  background-color: var(--aCinza);
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  .tabela {
-    display: block;              /* transforma a tabela em bloco */
-    overflow-x: auto;            /* adiciona rolagem horizontal */
-    white-space: nowrap;         /* impede quebra das colunas */
-    border-radius: 12px;
-  }
-
-  .tabela th,
-  .tabela td {
-    white-space: nowrap;       
-  }
-
-  .tabela::-webkit-scrollbar {
-    height: 8px;
-  }
-
-  .tabela::-webkit-scrollbar-thumb {
-    background-color: var(--aCinza);
-    border-radius: 4px;
-  }
-}
+/* BOTÃO ADICIONAR */
 
 .botaoAdicionar {
-  padding: 8px 14px;
+  background: var(--aCinza);
+  color: var(--offwhite);
   border: none;
-  background-color: var(--aCeu);
-  color: var(--text-color);
-  border-radius: 8px;
+  padding: 14px 22px;
+  border-radius: 14px;
   cursor: pointer;
-  margin-bottom: 20px;
-  transition: background 0.3s, transform 0.2s;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.3s;
 }
 
 .botaoAdicionar:hover {
-  background-color: var(--aCeu);
-  transform: scale(1.05);
+  background: var(--aCinza);
+  transform: translateY(-2px);
 }
 
-.botaoExcluir {
-  padding: 6px 12px;
-  border: none;
-  background-color: var(--aEscuro); /* vermelho para perigo */
-  color: var(--offwhite);
-  border-radius: 6px;
-  cursor: pointer;
-  margin-left: 8px;
-  transition: background 0.3s, transform 0.2s;
-}
-
-.botaoExcluir:hover {
-  background-color: #c0392b;
-  transform: scale(1.05);
-}
+/* FORMULÁRIO */
 
 .formBox {
-  margin: 20px 0;
-  padding: 20px;
-  background: var(--aClaro);
-  border-radius: 12px;
+  margin-top: 30px;
+  background: var(--offwhite);
+  max-width: 750px;
+  padding: 30px;
+  border-radius: 24px;
+  box-shadow: 0 5px 20px var(--aCinza);
+  animation: aparecer 0.3s ease;
+}
+
+.formTitulo {
+  color: var(--aEscuro);
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  margin-bottom: 18px;
 }
 
-.formBox input {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+.inputGroup label {
+  margin-bottom: 8px;
+  color: var(--aCeu);
+  font-weight: bold;
+}
+
+.inputGroup input {
+  padding: 14px;
+  border-radius: 14px;
+  border: 2px solid var(--aClaro);
+  background: var(--offwhite);
+  color: var(--aEscuro);
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.inputGroup input:focus {
   outline: none;
+  border-color: var(--aPastel);
+  background: var(--offwhite);
 }
 
-.formBox button {
-  padding: 8px 12px;
-  margin-right: 10px;
+/* BOTÕES */
+
+.botoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.salvar {
+  background: var(--aPastel);
+  color: var(--offwhite);
   border: none;
-  border-radius: 6px;
+  padding: 12px 22px;
+  border-radius: 12px;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.formBox button:first-of-type {
+.salvar:hover {
   background: var(--aCeu);
-  color: var(--text-color);
 }
 
-.formBox button:last-of-type {
-  background: #ccc;
+.cancelar {
+  background: var(--aPastel);
+  color: var(--offwhite);
+  border: none;
+  padding: 12px 22px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cancelar:hover {
+  background: var(--aCeu);
+}
+
+/* TABELA */
+
+.container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 35px;
+  background: var(--offwhite);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px var(--aCinza);
+  border: 2px solid var(--aClaro);
+}
+
+.container th {
+  background: var(--aCinza);
+  color: var(--offwhite);
+  text-align: center;
+  padding: 16px;
+  border: 1px solid var(--offwhite);
+}
+
+.container td {
+  padding: 16px;
+  border: 1px solid var(--aCinza);
+  color: var(--aEscuro);
+}
+
+.container tr:nth-child(even) {
+  background: var(--aClaro);
+}
+
+.container tr:hover {
+  background: var(--offwhite);
+}
+
+/* TAG FINALIDADE */
+
+.finalidadeTag {
+  background: var(--aClaro);
+  color: var(--aEscuro);
+  padding: 6px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* BOTÕES TABELA */
+
+.editar {
+  background: var(--aCeu);
+  color: var(--offwhite);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: 0.3s;
+}
+
+.editar:hover {
+  background: var(--aPastel);
+}
+
+.excluir {
+  background: var(--aEscuro);
+  color: var(--offwhite);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.excluir:hover {
+  background: var(--aCinza);
+}
+
+/* TOAST */
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 280px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  color: var(--offwhite);
+  font-weight: 600;
+  box-shadow: 0 6px 18px var(--aCinza);
+  animation: aparecerToast 0.3s ease;
+  z-index: 999;
+}
+
+.toastSucesso {
+  background: var(--aCeu);
+}
+
+.toastErro {
+  background: var(--aEscuro);
+}
+
+.toastAviso {
+  background: var(--amarelo);
+  color: var(--aEscuro);
+}
+
+/* UTILIDADES */
+
+.oculto {
+  display: none;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aparecerToast {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .formBox {
+    padding: 20px;
+  }
+
+  .container table {
+    font-size: 13px;
+  }
+
+  .container th,
+  .container td {
+    padding: 10px;
+  }
+
+  .botoes {
+    flex-direction: column;
+  }
+
+  .editar,
+  .excluir {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
 }
