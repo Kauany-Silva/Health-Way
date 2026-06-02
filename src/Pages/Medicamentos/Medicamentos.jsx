@@ -1,94 +1,283 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Medicamentos.module.css";
 
-const Medicamentos = () => {
-  const [medicamentos, setMedicamentos] = useState([
-    { id: 1, nome: "Paracetamol", dias: "Seg, Qua, Sex", horario: "08:00", finalidade: "Dor / Febre" },
-    { id: 2, nome: "Amoxicilina", dias: "Seg, Ter, Qui", horario: "12:00", finalidade: "Infecção bacteriana" },
-    { id: 3, nome: "Vitamina D", dias: "Todos os dias", horario: "09:00", finalidade: "Suplementação" },
-  ]);
+export default function Medicamentos() {
+  const [medicamentos, setMedicamentos] = useState(() => {
+    return JSON.parse(localStorage.getItem("meds")) || [];
+  });
 
-  const [modoAdd, setModoAdd] = useState(false);
+  const [mostrarForm, setMostrarForm] = useState(false);
+  const [editIndex, setEditIndex] = useState(-1);
 
-  const [novoMed, setNovoMed] = useState({
+  const [form, setForm] = useState({
     nome: "",
     dias: "",
     horario: "",
     finalidade: "",
   });
 
-  const handleChange = (e) => {
-    setNovoMed({ ...novoMed, [e.target.name]: e.target.value });
+  const [toast, setToast] = useState({
+    mostrar: false,
+    mensagem: "",
+    tipo: "sucesso",
+  });
+
+  const nomeRef = useRef(null);
+
+  useEffect(() => {
+    localStorage.setItem("meds", JSON.stringify(medicamentos));
+  }, [medicamentos]);
+
+  const abrirForm = () => {
+    setMostrarForm(true);
+
+    setTimeout(() => {
+      nomeRef.current?.focus();
+    }, 100);
   };
 
-  const handleAdd = () => {
-    const novo = {
-      id: Date.now(),
-      ...novoMed,
-    };
-
-    setMedicamentos([...medicamentos, novo]);
-
-    setNovoMed({ nome: "", dias: "", horario: "", finalidade: "" });
-    setModoAdd(false);
+  const limpar = () => {
+    setForm({
+      nome: "",
+      dias: "",
+      horario: "",
+      finalidade: "",
+    });
   };
 
-  const handleDelete = (id) => {
-    setMedicamentos(medicamentos.filter((med) => med.id !== id));
+  const fecharForm = () => {
+    setMostrarForm(false);
+    limpar();
+    setEditIndex(-1);
+  };
+
+  const mostrarToast = (mensagem, tipo = "sucesso") => {
+    setToast({
+      mostrar: true,
+      mensagem,
+      tipo,
+    });
+
+    setTimeout(() => {
+      setToast((prev) => ({
+        ...prev,
+        mostrar: false,
+      }));
+    }, 2500);
+  };
+
+  const salvar = () => {
+    if (
+      !form.nome ||
+      !form.dias ||
+      !form.horario ||
+      !form.finalidade
+    ) {
+      mostrarToast("Preencha todos os campos", "erro");
+      return;
+    }
+
+    const med = { ...form };
+
+    if (editIndex === -1) {
+      setMedicamentos((prev) => [...prev, med]);
+      mostrarToast(
+        "Medicamento salvo com sucesso",
+        "sucesso"
+      );
+    } else {
+      const atualizados = [...medicamentos];
+      atualizados[editIndex] = med;
+
+      setMedicamentos(atualizados);
+
+      mostrarToast(
+        "Medicamento atualizado",
+        "aviso"
+      );
+    }
+
+    fecharForm();
+  };
+
+  const editar = (i) => {
+    const med = medicamentos[i];
+
+    setForm(med);
+    setEditIndex(i);
+
+    abrirForm();
+
+    mostrarToast(
+      "Editando medicamento",
+      "aviso"
+    );
+  };
+
+  const excluirMed = (i) => {
+    const confirmar = window.confirm(
+      "Deseja realmente excluir este medicamento?"
+    );
+
+    if (!confirmar) return;
+
+    const lista = [...medicamentos];
+    lista.splice(i, 1);
+
+    setMedicamentos(lista);
+
+    mostrarToast(
+      "Medicamento excluído",
+      "aviso"
+    );
+  };
+
+  const handleEnter = (e, proximoId) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+
+      if (proximoId) {
+        document.getElementById(proximoId)?.focus();
+      } else {
+        salvar();
+      }
+    }
   };
 
   return (
-    <div className={styles.medicamentosPage}>
-      <h2 className={styles.titulo}>Gerenciamento de Medicamentos</h2>
-      <p className={styles.subtitulo}>
-        Acompanhe horários, dias de uso, finalidade e edite quando necessário.
+    <div className={styles.container}>
+      <h1>Gerenciamento de Medicamentos</h1>
+
+      <p className={styles.sub}>
+        Controle seus medicamentos de forma prática e segura
       </p>
 
-      <button className={styles.botaoAdicionar} onClick={() => setModoAdd(true)}>
+      <button
+        className={styles.botaoAdicionar}
+        onClick={abrirForm}
+      >
         + Adicionar medicamento
       </button>
 
-      {/* FORMULÁRIO */}
-      {modoAdd && (
+      {toast.mostrar && (
+        <div
+          className={`${styles.toast}
+          ${
+            toast.tipo === "sucesso"
+              ? styles.toastSucesso
+              : toast.tipo === "erro"
+              ? styles.toastErro
+              : styles.toastAviso
+          }`}
+        >
+          {toast.mensagem}
+        </div>
+      )}
+
+      {mostrarForm && (
         <div className={styles.formBox}>
-          <h3>Novo medicamento</h3>
+          <h2 className={styles.formTitulo}>
+            {editIndex === -1
+              ? "Novo medicamento"
+              : "Editar medicamento"}
+          </h2>
 
-          <input
-            name="nome"
-            placeholder="Nome"
-            value={novoMed.nome}
-            onChange={handleChange}
-          />
+          <div className={styles.inputGroup}>
+            <label>Nome do medicamento</label>
 
-          <input
-            name="dias"
-            placeholder="Dias de uso"
-            value={novoMed.dias}
-            onChange={handleChange}
-          />
+            <input
+              ref={nomeRef}
+              id="nome"
+              value={form.nome}
+              placeholder="Ex: Paracetamol"
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  nome: e.target.value,
+                })
+              }
+              onKeyDown={(e) =>
+                handleEnter(e, "dias")
+              }
+            />
+          </div>
 
-          <input
-            name="horario"
-            placeholder="Horário"
-            value={novoMed.horario}
-            onChange={handleChange}
-          />
+          <div className={styles.inputGroup}>
+            <label>Dias de uso</label>
 
-          <input
-            name="finalidade"
-            placeholder="Finalidade"
-            value={novoMed.finalidade}
-            onChange={handleChange}
-          />
+            <input
+              id="dias"
+              value={form.dias}
+              placeholder="Ex: Seg, Qua, Sex"
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  dias: e.target.value,
+                })
+              }
+              onKeyDown={(e) =>
+                handleEnter(e, "horario")
+              }
+            />
+          </div>
 
-          <div>
-            <button onClick={handleAdd}>Salvar</button>
-            <button onClick={() => setModoAdd(false)}>Cancelar</button>
+          <div className={styles.inputGroup}>
+            <label>Horário</label>
+
+            <input
+              id="horario"
+              type="time"
+              value={form.horario}
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  horario: e.target.value,
+                })
+              }
+              onKeyDown={(e) =>
+                handleEnter(e, "finalidade")
+              }
+            />
+          </div>
+
+          <div className={styles.inputGroup}>
+            <label>Finalidade</label>
+
+            <input
+              id="finalidade"
+              value={form.finalidade}
+              placeholder="Ex: Dor / Febre"
+              onChange={(e) =>
+                setForm({
+                  ...form,
+                  finalidade: e.target.value,
+                })
+              }
+              onKeyDown={(e) =>
+                handleEnter(e)
+              }
+            />
+          </div>
+
+          <div className={styles.botoes}>
+            <button
+              className={styles.salvar}
+              onClick={salvar}
+            >
+              Salvar
+            </button>
+
+            <button
+              className={styles.cancelar}
+              onClick={fecharForm}
+            >
+              Cancelar
+            </button>
           </div>
         </div>
       )}
 
-      <table className={styles.tabela}>
+      <table>
         <thead>
           <tr>
             <th>Nome</th>
@@ -100,20 +289,35 @@ const Medicamentos = () => {
         </thead>
 
         <tbody>
-          {medicamentos.map((med) => (
-            <tr key={med.id}>
-              <td>{med.nome}</td>
-              <td>{med.dias}</td>
-              <td>{med.horario}</td>
-              <td>{med.finalidade}</td>
+          {medicamentos.map((m, i) => (
+            <tr key={i}>
+              <td>{m.nome}</td>
+
+              <td>{m.dias}</td>
+
+              <td>{m.horario}</td>
+
               <td>
-                <button className={styles.botaoEditar}>
+                <span
+                  className={styles.finalidadeTag}
+                >
+                  {m.finalidade}
+                </span>
+              </td>
+
+              <td>
+                <button
+                  className={styles.editar}
+                  onClick={() => editar(i)}
+                >
                   Editar
                 </button>
 
                 <button
-                  className={styles.botaoExcluir}
-                  onClick={() => handleDelete(med.id)}
+                  className={styles.excluir}
+                  onClick={() =>
+                    excluirMed(i)
+                  }
                 >
                   Excluir
                 </button>
@@ -124,6 +328,6 @@ const Medicamentos = () => {
       </table>
     </div>
   );
-};
+}
 
-export { Medicamentos }
+export {Medicamentos};
