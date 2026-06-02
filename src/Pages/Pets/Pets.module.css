@@ -5,20 +5,6 @@
   font-family: "Inter", sans-serif;
 }
 
-:root {
-  --aClaro: #bac8e0;
-  --aPastel: #89CFF0;
-  --aCeu: #7BBDE8;
-  --aCinza: #9eb7e0;
-  --aEscuro: #001D39;
-  --amarelo: #FFDA9E;
-  --aMedio: #aad01f;
-  --offwhite: #f5f5f5;
-  --preto: #000;
-  --cinza: #161616;
-  --cinzaclaro: #555;
-}
-
 .title {
   margin-left: 15px;
   margin-top: 15px;
@@ -546,4 +532,3 @@
 .vaccineTable td:last-child {
   text-align: center;
 }
-
