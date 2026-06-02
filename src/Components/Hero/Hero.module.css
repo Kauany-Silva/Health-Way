@@ -7,7 +7,6 @@
 
 .videoBg {
   position: absolute;
-  
   top: 0;
   left: 0;
   width: 100%;
@@ -29,8 +28,8 @@
   text-align: center;
 }
 
-.overlay h1 {
-  font-family: "Allura";
+h1 {
+  font-family: var(--font-titulo);
   font-size: 5rem;
   font-weight: bold;
   margin-bottom: 1rem;

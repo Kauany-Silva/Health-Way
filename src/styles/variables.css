@@ -17,9 +17,17 @@
     --text-color: var(--aEscuro); /* texto padrão */
    
     --font-base: 16px;
-    --font-principal: url('../../Assets/Fontes/LuxuriousScript-Regular') format('ttf');
+   --font-titulo: 'LuxuriousScript', cursive, sans-serif;
 
     --vermelho: #ff3d41;
+}
+
+@font-face {
+  font-family: 'LuxuriousScript';
+  src: url('./../Assets/Fontes/LuxuriousScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* melhora performance */
 }
 
 body {
