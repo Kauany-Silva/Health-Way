@@ -1,0 +1,455 @@
+/* ============================================
+   CONTAINER PRINCIPAL
+   ============================================ */
+.noticiasContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================================
+   HEADER DA PÁGINA
+   ============================================ */
+.noticiasHeader {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  color: white;
+}
+
+.tituloPrincipal {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.subtitulo {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.buscaForm {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.buscaInput {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.buscaBtn {
+  padding: 12px 25px;
+  background: #ff6b35;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.buscaBtn:hover {
+  background: #ff5722;
+  transform: scale(1.05);
+}
+
+/* ============================================
+   CATEGORIAS
+   ============================================ */
+.categoriasContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.categoriaBtn {
+  padding: 10px 20px;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #333;
+}
+
+.categoriaBtn:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.categoriaAtiva {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* ============================================
+   INFO DE ATUALIZAÇÃO
+   ============================================ */
+.updateInfo {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   LOADING
+   ============================================ */
+.loadingContainer {
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: 15px;
+  margin: 40px 0;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   ERROR
+   ============================================ */
+.errorContainer {
+  text-align: center;
+  padding: 40px;
+}
+
+.errorBox {
+  background: #fee;
+  border: 1px solid #fcc;
+  border-radius: 15px;
+  padding: 40px;
+  color: #c33;
+}
+
+.retryBtn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: #667eea;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* ============================================
+   NOTÍCIA EM DESTAQUE
+   ============================================ */
+.destaqueContainer {
+  margin: 40px 0;
+}
+
+.destaqueCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.destaqueCard:hover {
+  transform: translateY(-5px);
+}
+
+.destaqueImagem {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  object-fit: cover;
+}
+
+.destaqueImagemPlaceholder {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+}
+
+.destaqueContent {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.destaqueTag {
+  display: inline-block;
+  padding: 5px 12px;
+  background: #ff6b35;
+  color: white;
+  border-radius: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-bottom: 15px;
+}
+
+.destaqueTitulo {
+  font-size: 28px;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  color: #333;
+}
+
+.destaqueDescricao {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.destaqueMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.destaqueFonte {
+  font-size: 14px;
+  color: #999;
+}
+
+.destaqueBtn {
+  padding: 12px 30px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.destaqueBtn:hover {
+  background: #764ba2;
+  transform: translateX(5px);
+}
+
+/* ============================================
+   GRID DE NOTÍCIAS
+   ============================================ */
+.noticiasGridHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0 30px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.noticiasGridTitulo {
+  font-size: 24px;
+  color: #333;
+}
+
+.categoriaAtualBadge,
+.buscaAtualBadge {
+  padding: 5px 12px;
+  background: #667eea;
+  color: white;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.noticiasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.noticiaCard {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.noticiaCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.noticiaImagem {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.noticiaImagemPlaceholder {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.noticiaContent {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.noticiaFonte {
+  display: inline-block;
+  padding: 4px 10px;
+  background: #667eea;
+  color: white;
+  border-radius: 5px;
+  font-size: 11px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.noticiaTitulo {
+  font-size: 18px;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.noticiaDescricao {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+  flex: 1;
+  line-height: 1.6;
+}
+
+.noticiaMeta {
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  font-size: 12px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+/* ============================================
+   SEM NOTÍCIAS
+   ============================================ */
+.semNoticias {
+  text-align: center;
+  padding: 60px;
+  background: white;
+  border-radius: 15px;
+  color: #999;
+}
+
+.semNoticias p:first-child {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* ============================================
+   RESPONSIVIDADE
+   ============================================ */
+@media (max-width: 768px) {
+  .noticiasContainer {
+    padding: 15px;
+  }
+
+  .tituloPrincipal {
+    font-size: 1.8rem;
+  }
+
+  .destaqueTitulo {
+    font-size: 22px;
+  }
+
+  .destaqueDescricao {
+    font-size: 16px;
+  }
+
+  .destaqueContent {
+    padding: 25px;
+  }
+
+  .noticiasGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .noticiasGridHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buscaForm {
+    flex-direction: column;
+  }
+
+  .buscaBtn {
+    width: 100%;
+  }
+
+  .categoriasContainer {
+    gap: 8px;
+  }
+
+  .categoriaBtn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .destaqueMeta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .destaqueBtn {
+    width: 100%;
+    text-align: center;
+  }
+}

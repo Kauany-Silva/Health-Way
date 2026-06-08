@@ -7,6 +7,7 @@ import {
   FaPills,
   FaPaw,
   FaSignOutAlt,
+  FaRegNewspaper,
 } from "react-icons/fa";
 
 import styles from "./Dashboard.module.css";
@@ -66,6 +67,9 @@ const Dashboard = () => {
           </Link>
           <Link to="pets" className={styles.menuItem}>
             <FaPaw className={styles.icon}/> <span className={styles.menuText}>Pets</span>
+          </Link>
+          <Link to="noticias" className={styles.menuItem}>
+            <FaRegNewspaper className={styles.icon}/> <span className={styles.menuText}>Notícias</span>
           </Link>
           <Link to="/" className={styles.menuItem}>
             <FaSignOutAlt className={styles.icon}/> <span className={styles.menuText}>Sair</span>
