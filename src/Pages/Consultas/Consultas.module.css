@@ -1,48 +1,479 @@
 .consultasPage {
   padding: 30px;
   background: var(--bg-color);
-  min-height: 100%;
+  min-height: 100vh;
   border-radius: 12px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .titulo {
   font-size: 2rem;
   margin-bottom: 10px;
   color: var(--text-color);
+  font-weight: 600;
 }
 
 .subtitulo {
+  margin-bottom: 0;
+  color: var(--cinzaclaro);
+  font-size: 1.1rem;
+}
+
+.btnAdicionar {
+  padding: 12px 24px;
+  background: var(--aEscuro);
+  color: var(--offwhite);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.btnAdicionar:hover {
+  background: var(--aCeu);
+  color: var(--aEscuro);
+  transform: scale(1.05);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   margin-bottom: 30px;
+}
+
+.statCard {
+  background: var(--offwhite);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid var(--aPastel);
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  background: var(--aClaro);
+  border-color: var(--aEscuro);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--aEscuro);
+}
+
+.statLabel {
+  color: var(--cinzaclaro);
+  margin-top: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.searchBar {
+  margin-bottom: 30px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 15px 20px;
+  border: 2px solid var(--aPastel);
+  border-radius: 50px;
+  font-size: 1rem;
+  background: var(--offwhite);
+  transition: all 0.3s ease;
+  outline: none;
   color: var(--text-color);
+}
+
+.searchInput::placeholder {
+  color: var(--cinzaclaro);
+  opacity: 0.7;
+}
+
+.searchInput:focus {
+  border-color: var(--aEscuro);
+  box-shadow: 0 4px 15px rgba(0,29,57,0.2);
+  transform: scale(1.01);
+  background: white;
 }
 
 .listaConsultas {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
+  justify-content: flex-start;
 }
 
 .cardConsulta {
-  background: var(--aCinza);
-  backdrop-filter: blur(6px);
-  padding: 20px;
-  border-radius: 12px;
-  flex: 1 1 220px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  background: var(--offwhite);
+  padding: 25px;
+  border-radius: 20px;
+  flex: 1 1 300px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   color: var(--text-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--aPastel);
 }
 
 .cardConsulta:hover {
-     transform: translateY(-5px) scale(1.05);
-    background: var(--aCeu);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  background: var(--aClaro);
+  border-color: var(--aEscuro);
+}
+
+.cardConsulta.confirmada {
+  border-left: 5px solid var(--aMedio);
+}
+
+.cardConsulta.pendente {
+  border-left: 5px solid var(--amarelo);
+}
+
+.statusBadge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: white;
+}
+
+.cardConsulta.confirmada .statusBadge {
+  background: var(--aMedio);
+}
+
+.cardConsulta.pendente .statusBadge {
+  background: var(--amarelo);
+  color: var(--aEscuro);
 }
 
 .cardConsulta h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  color: var(--text-color);
+  padding-right: 80px;
 }
 
-.cardConsulta p {
-  margin: 5px 0;
-  font-size: 0.95rem;
+.infoRow {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--aPastel);
+}
+
+.infoRow:last-of-type {
+  border-bottom: none;
+}
+
+.infoLabel {
+  font-weight: 600;
+  color: var(--cinzaclaro);
+  width: 65px;
+  font-size: 0.9rem;
+}
+
+.infoValue {
+  color: var(--text-color);
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.btnDetalhes {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: var(--aEscuro);
+  color: var(--offwhite);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.btnDetalhes:hover {
+  background: var(--aCeu);
+  color: var(--aEscuro);
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.noResults {
+  text-align: center;
+  padding: 40px;
+  background: var(--offwhite);
+  border-radius: 20px;
+  color: var(--cinzaclaro);
+  font-size: 1.1rem;
+  width: 100%;
+  border: 1px solid var(--aPastel);
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  background: var(--offwhite);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: slideUp 0.3s ease;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 2px solid var(--aPastel);
+  background: var(--aClaro);
+  border-radius: 20px 20px 0 0;
+}
+
+.modalHeader h3 {
+  color: var(--aEscuro);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--aEscuro);
+  transition: all 0.3s ease;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modalClose:hover {
+  background: var(--aEscuro);
+  color: var(--offwhite);
+  transform: rotate(90deg);
+}
+
+.modalBody {
+  padding: 25px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--aEscuro);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid var(--aPastel);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  color: var(--text-color);
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: var(--aEscuro);
+  box-shadow: 0 0 0 3px rgba(0,29,57,0.1);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.modalFooter {
+  display: flex;
+  gap: 15px;
+  padding: 20px 25px;
+  border-top: 2px solid var(--aPastel);
+  background: var(--aClaro);
+  border-radius: 0 0 20px 20px;
+}
+
+.btnCancelar,
+.btnSalvar {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnCancelar {
+  background: var(--cinzaclaro);
+  color: var(--offwhite);
+}
+
+.btnCancelar:hover {
+  background: var(--aEscuro);
+  transform: scale(1.02);
+}
+
+.btnSalvar {
+  background: var(--aMedio);
+  color: var(--aEscuro);
+}
+
+.btnSalvar:hover {
+  background: var(--aCeu);
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cardConsulta {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.consultasPage::-webkit-scrollbar {
+  width: 8px;
+}
+
+.consultasPage::-webkit-scrollbar-track {
+  background: var(--aClaro);
+  border-radius: 10px;
+}
+
+.consultasPage::-webkit-scrollbar-thumb {
+  background: var(--aEscuro);
+  border-radius: 10px;
+}
+
+.consultasPage::-webkit-scrollbar-thumb:hover {
+  background: var(--aCeu);
+}
+
+.modalContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modalContent::-webkit-scrollbar-track {
+  background: var(--aPastel);
+  border-radius: 10px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+  background: var(--aEscuro);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .consultasPage {
+    padding: 20px;
+  }
+  
+  .titulo {
+    font-size: 1.8rem;
+  }
+  
+  .headerContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .btnAdicionar {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .listaConsultas {
+    gap: 15px;
+  }
+  
+  .cardConsulta {
+    flex: 1 1 100%;
+  }
+  
+  .infoLabel {
+    width: 60px;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .modalContent {
+    width: 95%;
+    margin: 20px;
+  }
 }

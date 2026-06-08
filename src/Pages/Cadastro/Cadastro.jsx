@@ -5,7 +5,6 @@ import heroVideo from "../../Assets/Videos/hero.mp4";
 const Cadastro=()=> {
 
   return (
-
     
     <div className={style.container}>
 
