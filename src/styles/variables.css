@@ -17,13 +17,13 @@
     --text-color: var(--aEscuro); /* texto padrão */
    
     --font-base: 16px;
-   --font-titulo: 'LuxuriousScript', cursive, sans-serif;
+   --font-titulo: 'Allura-Regular', cursive, sans-serif;
 
     --vermelho: #ff3d41;
 }
 
 @font-face {
-  font-family: 'LuxuriousScript';
+  font-family: 'Allura-Regular';
   src: url('./../Assets/Fontes/Allura-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
