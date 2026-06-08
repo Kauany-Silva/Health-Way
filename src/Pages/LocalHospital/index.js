@@ -1,1 +1,1 @@
-export * from './LocalHospital';
+C

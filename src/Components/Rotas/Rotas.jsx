@@ -15,6 +15,7 @@ import { Consultas } from '../../Pages/Consultas';
 import { Medicamentos } from '../../Pages/Medicamentos';
 
 import { NotFound } from '../../Pages/NotFound/NotFound';
+import { Noticias } from '../../Pages/Noticias/Noticias';
 
 const Rotas = () => {
   return (
@@ -33,8 +34,10 @@ const Rotas = () => {
         <Route path="consultas" element={<Consultas />} />
         <Route path="medicamentos" element={<Medicamentos />} />
         <Route path="pets" element={<Pets />} />
+        <Route path="noticias" element={<Noticias />} />
        </Route>
       </Route>
+
 
        <Route path="*" element={<NotFound />} />
 
