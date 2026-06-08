@@ -16,16 +16,10 @@
 .Cabecalho h1 {
   font-size: 2rem;
   margin: 0;
-  font-family: var(--font-principal);
+  font-family: var(--font-titulo);
   color: var(--text-color); /* texto ajusta conforme contraste */
 }
 
-@font-face {
-  font-family: var(--font-principal);
-  src: url('../../Assets/Fontes/LuxuriousScript-Regular') format('ttf');
-  font-weight: normal;
-  font-style: normal;
-}
 
 /* Tablets */
 @media (max-width: 768px) {

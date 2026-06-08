@@ -284,6 +284,7 @@ const LocalHospital = () => {
       <div className={styles.hospitaisSection}>
         <div className={styles.sectionHeader}>
           <h2>Hospitais próximos a você</h2>
+          
         </div>
         
         <div className={styles.listaHospitais}>

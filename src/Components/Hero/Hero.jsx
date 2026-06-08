@@ -36,7 +36,7 @@ const Hero = () => {
       </video>
 
       <div className={styles.overlay}>
-        <h1>Health Way</h1>
+         <h1>Health Way</h1>
         <h2 className={styles.slogan}>
           {displayedText}
           <span className={styles.cursor}>|</span>

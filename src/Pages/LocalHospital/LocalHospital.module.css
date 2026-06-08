@@ -146,6 +146,15 @@
   color: var(--aEscuro);
 }
 
+.quantidade {
+  background: #0066cc;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--offwhite);
+}
+
 .listaHospitais {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -154,26 +163,26 @@
 
 /* CARDS - FUNDO BRANCO */
 .cardHospital {
-  background: white;
+  background: var(--offwhite);
   border-radius: 12px;
   padding: 20px;
   transition: all 0.3s ease;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--offwhite);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .cardHospital:hover {
   transform: translateY(-4px);
-  border-color: #0066cc;
+  border-color: var(--aMedio);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Card selecionado fica um pouco maior */
 .cardSelecionado {
   transform: scale(1.02);
-  border: 2px solid #0066cc;
+  border: 2px solid var(--aMedio);
   box-shadow: 0 8px 25px rgba(0, 102, 204, 0.2);
-  background: white;
+  background: var(--offwhite)
 }
 
 .cardSelecionado:hover {
@@ -183,7 +192,7 @@
 .cardHeader {
   margin-bottom: 15px;
   padding-bottom: 10px;
-  border-bottom: 2px solid #0066cc;
+  border-bottom: 2px solid var(--aMedio);
   display: inline-block;
 }
 
@@ -210,10 +219,10 @@
 .verMapaBtn {
   margin-top: 15px;
   padding: 10px 12px;
-  background: #0066cc;
+  background: var(--aMedio);
   border: none;
   border-radius: 8px;
-  color: white;
+  color: var(--offwhite);
   font-weight: 600;
   font-size: 0.85rem;
   cursor: pointer;
@@ -222,7 +231,7 @@
 }
 
 .verMapaBtn:hover {
-  background: #0052a3;
+  background: var(--aMedio);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
 }
@@ -243,7 +252,7 @@
 .infoFooter {
   background: var(--aEscuro);
   padding: 12px 40px;
-  border-top: 3px solid #0066cc;
+  border-top: 3px solid var(--aMedio);
   margin-top: auto;
 }
 
@@ -277,12 +286,12 @@
 .infoIcon {
   width: 35px;
   height: 35px;
-  background: #0066cc;
+  background: var(--aMedio);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--offwhite);
   transition: all 0.3s ease;
 }
 
@@ -293,25 +302,25 @@
 
 .infoItem:hover .infoIcon {
   transform: scale(1.1);
-  background: #0052a3;
+  background: var(--aMedio);
 }
 
 .infoText h4 {
-  color: white;
+  color: var(--offwhite);
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 3px;
 }
 
 .infoText p {
-  color: #ccc;
+  color: var(--offwhite);
   font-size: 0.7rem;
   line-height: 1.3;
   margin: 0;
 }
 
 .infoText p strong {
-  color: #0066cc;
+  color: var(--aMedio);
   font-weight: 700;
 }
 

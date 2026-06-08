@@ -8,6 +8,7 @@
   font-family: Arial, sans-serif;
   background: linear-gradient(
     180deg,
+    var(--offwhite) 0%,
     var(--aClaro) 100%
   );
   min-height: 100vh;
@@ -22,7 +23,7 @@
 }
 
 .sub {
-  color: var(--aEscuro);
+  color: var(--aCeu);
   margin-bottom: 25px;
   font-size: 16px;
 }
@@ -30,7 +31,7 @@
 /* BOTÃO ADICIONAR */
 
 .botaoAdicionar {
-  background: var(--aCinza);
+  background: var(--aPastel);
   color: var(--offwhite);
   border: none;
   padding: 14px 22px;
@@ -42,7 +43,7 @@
 }
 
 .botaoAdicionar:hover {
-  background: var(--aCinza);
+  background: var(--aCeu);
   transform: translateY(-2px);
 }
 
@@ -116,9 +117,9 @@
 }
 
 .cancelar {
-  background: var(--aPastel);
-  color: var(--offwhite);
-  border: none;
+  background: var(--offwhite);
+  color: var(--aPastel);
+  border: 2px solid var(--aPastel);
   padding: 12px 22px;
   border-radius: 12px;
   cursor: pointer;
@@ -127,7 +128,7 @@
 }
 
 .cancelar:hover {
-  background: var(--aCeu);
+  background: var(--aClaro);
 }
 
 /* TABELA */
@@ -144,16 +145,16 @@
 }
 
 .container th {
-  background: var(--aCinza);
+  background: var(--aPastel);
   color: var(--offwhite);
-  text-align: center;
+  text-align: left;
   padding: 16px;
-  border: 1px solid var(--offwhite);
+  border: 1px solid var(--aCeu);
 }
 
 .container td {
   padding: 16px;
-  border: 1px solid var(--aCinza);
+  border: 1px solid var(--aClaro);
   color: var(--aEscuro);
 }
 
@@ -162,7 +163,7 @@
 }
 
 .container tr:hover {
-  background: var(--offwhite);
+  background: var(--aPastel);
 }
 
 /* TAG FINALIDADE */
@@ -205,7 +206,7 @@
 }
 
 .excluir:hover {
-  background: var(--aCinza);
+  background: var(--cinza);
 }
 
 /* TOAST */
