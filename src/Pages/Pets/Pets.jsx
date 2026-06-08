@@ -579,8 +579,5 @@ export default function Pets() {
   );
 }
 
-<<<<<<< HEAD
+
 export { Pets };
-=======
-export { Pets };  
->>>>>>> a2e3653e53157cbdcf26b51d486595624b3ee1fe
