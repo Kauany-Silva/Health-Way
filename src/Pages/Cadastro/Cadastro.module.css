@@ -26,9 +26,17 @@
 }
 
 .titulo {
-    font-family: "Luxurious_Script", cursive;
+    font-family: "Allura-Regular", cursive;
     color: var(--offwhite);
+    align-items: center;
     
+}
+
+h1 {
+  font-size: 3.5rem;
+  align-items: center;
+  text-align: center;
+
 }
 
 /* Título */
