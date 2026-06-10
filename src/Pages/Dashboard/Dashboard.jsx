@@ -292,7 +292,7 @@ const Dashboard = () => {
             <FaPaw className={styles.icon}/> <span className={styles.menuText}>Pets</span>
           </Link>
            <Link to="noticias" className={styles.menuItem}>
-            <FaNewspaper className={styles.icon}/> <span className={styles.menuText}>Notícias</span>
+            <FaRegNewspaper className={styles.icon}/> <span className={styles.menuText}>Notícias</span>
           </Link>
           <Link to="/" className={styles.menuItem}>
             <FaSignOutAlt className={styles.icon}/> <span className={styles.menuText}>Sair</span>
