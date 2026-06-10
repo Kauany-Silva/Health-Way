@@ -7,7 +7,6 @@ import {
   FaPills,
   FaPaw,
   FaSignOutAlt,
-  FaRegNewspaper,
 } from "react-icons/fa";
 
 import styles from "./Dashboard.module.css";
