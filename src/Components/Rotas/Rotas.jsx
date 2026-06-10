@@ -30,7 +30,7 @@ const Rotas = () => {
     <Route element={<RotasPrivadas />}>
       <Route path="/dashboard" element={<Dashboard />}>
         <Route path="vacinacao" element={<CarteiraVacinacao />} />
-        <Route path="hospitais" element={<LocalHospital />} />
+        <Route path="hospitaiss" element={<LocalHospital />} />
         <Route path="consultas" element={<Consultas />} />
         <Route path="medicamentos" element={<Medicamentos />} />
         <Route path="pets" element={<Pets />} />
